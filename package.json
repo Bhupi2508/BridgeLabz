@@ -1,0 +1,16 @@
+{
+  "name": "bhupi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "prompt-sync": "^4.1.6",
+    "readline-sync": "^1.4.9"
+  }, 
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
