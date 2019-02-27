@@ -403,7 +403,7 @@ module.exports = {
 
     },
 
-    //CreateArray
+    //CreateArray for Integer
     CreateArray(num) {
         var arr = [];
         for (var val = 0; val < num; val++) {
@@ -414,16 +414,25 @@ module.exports = {
         return arr;
     },
 
+    //CreateArray for String
+    CreateArray(num) {
+        var arr1 = [];
+        for (var val = 0; val < num; val++) {
+            arr1[val] = read.question("Enter your " + val + " String : ");
+            console.log(arr1[val])
+        }
+
+        return arr1;
+    },
+
+
     //Bubble sort
 
     Bubble(arr) {
         var temp;
-        for (var j = 0; j < arr.length; j++) 
-        {
-            for (var k = 0; k < (arr.length - j - 1); k++)
-             {
-                if (arr[k] > arr[k + 1]) 
-                {
+        for (var j = 0; j < arr.length; j++) {
+            for (var k = 0; k < (arr.length - j - 1); k++) {
+                if (arr[k] > arr[k + 1]) {
                     temp = arr[k];
                     arr[k] = arr[k + 1];
                     arr[k + 1] = temp;
@@ -436,21 +445,31 @@ module.exports = {
 
     //Insertion Sorting
 
-    Insertion(arr) {
+    Insertion(arr1) {
         var temp;
-        for (var i = 0; i < arr.length; i++)
-         {
-            for (var j = i; j > 0; j--) 
-            {
-                if (arr[j] < arr[j - 1])
-                 {
-                    temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = i; j > 0; j--) {
+                if (arr1[j] < arr1[j - 1]) {
+                    temp = arr1[j];
+                    arr1[j] = arr1[j - 1];
+                    arr1[j - 1] = temp;
                 }
             }
         }
-        return arr;
+        return arr1;
     },
+
+    //dayofweek
+
+    dayofweek(d, m, y) {
+        var y0 = y - Math.floor((14 - m) / 12);
+        var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0/100)) + Math.floor((y0/400));
+        var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
+        var d0 = (d + x + Math.floor((31 * m0) / 12)) % (7);
+
+        return d0;
+    },
+
+
 
 }
