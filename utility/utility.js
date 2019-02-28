@@ -1,5 +1,5 @@
 var read = require('readline-sync');
-var sameline = require('util')
+
 var readline = require('readline-sync');
 var prompt = require('prompt-sync');
 
@@ -526,6 +526,41 @@ module.exports = {
     },
 
     //======================================================================================
+    //Binary Search
+
+    BinarySearch(arr, low, high, key) {
+        var sort = this.Insertion(arr);
+        console.log(sort);
+
+
+
+
+        while (low <= high) {
+            var mid = Math.floor((high + low) / 2);
+            
+            if (sort[mid] == key) {
+                return mid;
+
+                //check all the elements in right side
+            } else if (key > sort[mid]) {
+                low = mid + 1;
+
+                //check all the elements in left side
+            } else {
+                high = mid - 1;
+
+            }
+
+        }
+        //for invalid condition
+        return -1;
+    },
+
+    //========================================================================================
+    //Fourth Program = Search and sorts
+
+
+    //======================================================================================
     //Fifth Program = Find a number
 
     /*
@@ -591,14 +626,14 @@ module.exports = {
         var arr = [];
         for (var val = 0; val < num; val++) {
             arr[val] = read.questionInt("Enter your " + val + " Element : ");
-            console.log(arr[val])
+            //console.log(arr[val])
         }
 
         return arr;
     },
 
     //CreateArray for String
-    CreateArray(num) {
+    CreateArray1(num) {
         var arr1 = [];
         for (var val = 0; val < num; val++) {
             arr1[val] = read.question("Enter your " + val + " String : ");
@@ -788,17 +823,17 @@ module.exports = {
         //Condition for Binary element
         while (n > 0) {
             arr[i] = n % 2;
-            n = Math.floor(n/2);
+            n = Math.floor(n / 2);
             i++
         }
         console.log("Convert in Binary");
         //Print the reverse order 
-        for(var j = arr.length -1;j>=0;j--){
-            sum = sum + arr[j] +" ";
+        for (var j = arr.length - 1; j >= 0; j--) {
+            sum = sum + arr[j] + " ";
         }
         console.log(sum);
-    }       
-    
+    }
+
 }
 
 
