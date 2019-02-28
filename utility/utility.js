@@ -1,4 +1,5 @@
 var read = require('readline-sync');
+var sameline = require('util')
 var readline = require('readline-sync');
 var prompt = require('prompt-sync');
 
@@ -559,7 +560,14 @@ module.exports = {
     //======================================================================================
     //Sixth Program = Search the word
 
+    /*
+    Desc -> Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
+
+    word = User Input, Which you found
+    */
+
     Binary(word) {
+        // read the file from folder
         var file = require('fs');
         var f = file.readFileSync('/home/admin1/bhupi/file.txt', 'utf8');
         var arr = f.split(" ");
@@ -569,6 +577,83 @@ module.exports = {
         else {
             console.log("Searching word " + word + " is Not there in file");
         }
+    },
+
+
+
+    //======================================================================================
+    //CreateArray for Integer
+
+    /*
+    Desc - For Create Array Program
+    */
+    CreateArray(num) {
+        var arr = [];
+        for (var val = 0; val < num; val++) {
+            arr[val] = read.questionInt("Enter your " + val + " Element : ");
+            console.log(arr[val])
+        }
+
+        return arr;
+    },
+
+    //CreateArray for String
+    CreateArray(num) {
+        var arr1 = [];
+        for (var val = 0; val < num; val++) {
+            arr1[val] = read.question("Enter your " + val + " String : ");
+            console.log(arr1[val])
+        }
+
+        return arr1;
+    },
+
+    //======================================================================================
+    //Seventh Program = Insertion Sorting
+
+    /*
+    Desc -> Reads in strings from standard input and prints them in sorted order.
+    Uses insertion sort.
+    arr = user Input string, call the main function and sort the array
+    */
+
+    Insertion(arr1) {
+        var temp;
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = i; j > 0; j--) {
+                // if arr1[j] < arr1[j - 1], then swapping
+                if (arr1[j] < arr1[j - 1]) {
+                    temp = arr1[j];
+                    arr1[j] = arr1[j - 1];
+                    arr1[j - 1] = temp;
+                }
+            }
+        }
+        return arr1;
+    },
+
+    //======================================================================================
+    //Eighth Program = Bubble sort
+
+    /*
+    Desc - Reads in integers prints them in sorted order using Bubble Sort
+    arr = user Input, call the main function and sort the array
+    */
+
+    Bubble(arr) {
+        var temp;
+        for (var j = 0; j < arr.length; j++) {
+            for (var k = 0; k < (arr.length - j - 1); k++) {
+                // if arr[k] > arr[k + 1], then Swapping 
+                if (arr[k] > arr[k + 1]) {
+                    temp = arr[k];
+                    arr[k] = arr[k + 1];
+                    arr[k + 1] = temp;
+
+                }
+            }
+        }
+        return arr;
     },
 
     //======================================================================================
@@ -600,8 +685,26 @@ module.exports = {
         this.VendingMachine(amount, i + 1, notes)
     },
 
+
     //======================================================================================
-    //Eleventh Program = Temperatur Conversion
+    //Eleventh Program = dayofweek
+
+    /*
+    Desc - dayOfWeek static function that takes a date as input and prints the day of the week that date falls on. Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar 
+    
+    d, m, y take input from command line arguments
+    */
+
+    dayofweek(d, m, y) {
+        var y0 = y - Math.floor((14 - m) / 12);
+        var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+        var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
+        var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7;
+        return d0;
+    },
+
+    //======================================================================================
+    //Twflth Program = Temperatur Conversion
 
     /*
     Desc - given the temperature in fahrenheit or celsius as input outputs the temperature in Celsius or viceversa using the formula.
@@ -633,6 +736,7 @@ module.exports = {
 
     },
 
+
     //======================================================================================
     //Thirtheen Program = monthlyPayment Program
 
@@ -646,6 +750,7 @@ module.exports = {
         console.log("Payment : " + payment);
 
     },
+
 
     //======================================================================================
     //Forteenth Program = Newton's Program
@@ -668,95 +773,32 @@ module.exports = {
     },
 
     //======================================================================================
-    //CreateArray for Integer
+    //Fifteenth Program = toBinary
 
     /*
-    Desc - For Create Array Program
-    */
-    CreateArray(num) {
-        var arr = [];
-        for (var val = 0; val < num; val++) {
-            arr[val] = read.questionInt("Enter your " + val + " Element : ");
-            console.log(arr[val])
-        }
-
-        return arr;
-    },
-
-    //CreateArray for String
-    CreateArray(num) {
-        var arr1 = [];
-        for (var val = 0; val < num; val++) {
-            arr1[val] = read.question("Enter your " + val + " String : ");
-            console.log(arr1[val])
-        }
-
-        return arr1;
-    },
-
-    //======================================================================================
-    //Eighth Program = Bubble sort
-
-    /*
-    Desc - Reads in integers prints them in sorted order using Bubble Sort
-    arr = user Input, call the main function and sort the array
-    */
-
-    Bubble(arr) {
-        var temp;
-        for (var j = 0; j < arr.length; j++) {
-            for (var k = 0; k < (arr.length - j - 1); k++) {
-                // if arr[k] > arr[k + 1], then Swapping 
-                if (arr[k] > arr[k + 1]) {
-                    temp = arr[k];
-                    arr[k] = arr[k + 1];
-                    arr[k + 1] = temp;
-
-                }
-            }
-        }
-        return arr;
-    },
-
-    //======================================================================================
-    //Seventh Program = Insertion Sorting
-
-    /*
-    Desc -> Reads in strings from standard input and prints them in sorted order.
-    Uses insertion sort.
-    arr = user Input string, call the main function and sort the array
-    */
-
-    Insertion(arr1) {
-        var temp;
-        for (var i = 0; i < arr1.length; i++) {
-            for (var j = i; j > 0; j--) {
-                // if arr1[j] < arr1[j - 1], then swapping
-                if (arr1[j] < arr1[j - 1]) {
-                    temp = arr1[j];
-                    arr1[j] = arr1[j - 1];
-                    arr1[j - 1] = temp;
-                }
-            }
-        }
-        return arr1;
-    },
-
-    //======================================================================================
-    //Eleventh Program = dayofweek
-
-    /*
-    Desc - dayOfWeek static function that takes a date as input and prints the day of the week that date falls on. Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar 
+    Desc - take any number any convert into Binary form
     
-    d, m, y take input from command line arguments
+    n = UserInput
     */
 
-    dayofweek(d, m, y) {
-        var y0 = y - Math.floor((14 - m) / 12);
-        var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-        var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
-        var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7;
-        return d0;
-    },
-
+    toBinary(n) {
+        var sum = 0;
+        var arr = [];
+        var i = 0;
+        //Condition for Binary element
+        while (n > 0) {
+            arr[i] = n % 2;
+            n = Math.floor(n/2);
+            i++
+        }
+        console.log("Convert in Binary");
+        //Print the reverse order 
+        for(var j = arr.length -1;j>=0;j--){
+            sum = sum + arr[j] +" ";
+        }
+        console.log(sum);
+    }       
+    
 }
+
+
