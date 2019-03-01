@@ -673,7 +673,7 @@ module.exports = {
 
     Findnumber(low, high) {
         var mid = low + Math.floor((high - low) / 2)
-        console.log(mid)
+        
         if (low < high) {
             //if value is alternate one y one
             if (low == high - 1) {
@@ -684,7 +684,7 @@ module.exports = {
                 if (c == 'n')
                     return high;
             }
-            c = readline.question("Is the number " + mid + - +high + " if yes, press 'y'. Else Press 'n' : ")
+            c = readline.question("Is the number " + mid + "-" +high + " if yes, press 'y'. Else Press 'n' : ")
             if (c == 'y')
                 //return the mid value
                 mid = this.Findnumber(mid, high)
@@ -983,14 +983,14 @@ module.exports = {
             n = Math.floor(n / 2);
             i++
         }
-        console.log("Convert in Binary");
+       
         //Print the reverse order 
         for (var j = arr.length - 1; j >= 0; j--) {
             sum = sum + arr[j] + " ";
         }
-        console.log(sum);
+        return sum
     },
-
 }
+
 
 

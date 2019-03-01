@@ -1,14 +1,5 @@
 // Newton's Program
 var utility = require('../utility/utility')
-function New() {
-    var read = utility.input();
-    read.question("Enter the value of c : ", function (c) {
-       utility.Newton(c);
-       
-        read.close();
-
-    })
-   
-}
-New();
-
+var read = require('readline-sync');
+var c = read.question("Enter the value of c : ")
+utility.Newton(c)

@@ -1,12 +1,6 @@
 // toBinary
 var utility = require('../utility/utility')
-function ToBin(){
-var read = utility.input();
-
-read.question("Enter the Number :",function(word){
-utility.toBinary(word),
-read.close();
-})
-
-    }
-    ToBin();
+var read = require('readline-sync');
+var word = read.question("Enter the Number :")
+var t = utility.toBinary(word)
+console.log("Convert into Binary : " + t);
