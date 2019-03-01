@@ -1,11 +1,5 @@
 // Harmonic  Series
 var utility = require('../utility/utility')
-function HarmonicSeries(){
-
-    var read = utility.input();
-    read.question("Enter the number : ", function(value){
-        utility.Harmonic(value),
-        read.close();
-    })
-}
-HarmonicSeries();
+var read = require('readline-sync');
+var value = read.question("Enter the number : ")
+    utility.Harmonic(value)

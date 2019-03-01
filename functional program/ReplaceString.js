@@ -1,10 +1,6 @@
 //Leap year 
 var utility = require('../utility/utility')
-function Replace1() {
-    var read = utility.input();
-    read.question("Enter the Username : ", function(username) {
-        utility.Replace(username),
-        read.close();
-    })
-}
-Replace1();
+var read = require('readline-sync');
+var username = read.question("Enter the Username : ")
+utility.Replace(username)
+

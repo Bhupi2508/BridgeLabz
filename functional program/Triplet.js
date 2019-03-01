@@ -1,12 +1,5 @@
 // Triplet 
 var utility = require('../utility/utility')
-
-function Triplets() {
-    var read = utility.input();
-    read.question("Enter the size : ", function (m) {
-        utility.Triplet(m),
-            read.close();
-    })
-
-}
-Triplets();
+var read = require('readline-sync');
+var m = read.question("Enter the size of array : ")
+utility.Triplet(m)

@@ -1,11 +1,6 @@
 //Flip coin
 var utility = require('../utility/utility')
-function Flipcoin(){
+var read = require('readline-sync');
+var num = read.question("Enter the num :")
+utility.Flipcoin(num);
 
-	var read = utility.input();
-	read.question("Enter the num :",function(num){
-		utility.Flipcoin(num);
-    	read.close();
-	})
-}
-Flipcoin();

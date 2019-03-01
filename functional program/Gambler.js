@@ -1,17 +1,9 @@
  // Gambler
  var utility = require('../utility/utility')
- function Gambler(){
+ var read = require('readline-sync');
 
-     var read = utility.input();
-     read.question("Enter the Stake :" , function(stake){
-        read.question("Enter the goal :" , function(goal){
-             read.question("Enter the bets :" , function(bets){
-                    utility.Gambler1(stake, goal, bets),
-                    read.close();
-        })
-    })
-
-
-    })
- }
-  Gambler();
+ var stake = read.question("Enter the Stake :");
+ var goal = read.question("Enter the goal :");
+ var bets = read.question("Enter the bets :");
+ utility.Gambler1(stake, goal, bets)
+     

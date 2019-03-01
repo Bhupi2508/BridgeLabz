@@ -72,7 +72,6 @@ switch (value) {
         arr = utility.CreateArray(num);
         var start = parseInt(read.question("Press Enter for start the time :"));
         var s1 = utility.StopWatch(start);
-        var s1 = utility.StopWatch();
         var k = utility.Bubble(arr);
         console.log(k);
         var end = parseInt(read.question("Press Enter for stop the time :"));
@@ -86,7 +85,6 @@ switch (value) {
         arr = utility.CreateArray1(num);
         var start = parseInt(read.question("Press Enter for start the time :"));
         var s1 = utility.StopWatch(start);
-        var s1 = utility.StopWatch();
         var k = utility.Bubble(arr);
         console.log(k);
         var end = parseInt(read.question("Press Enter for stop the time :"));

@@ -1,12 +1,6 @@
 // Coupen number
 var utility = require('../utility/utility')
-function Coupens(){
-var read = utility.input();
+var read = require('readline-sync');
 
-read.question("Enter the Number :",function(number){
-utility.Coupen(number),
-read.close();
-})
-
-    }
-    Coupens();
+var number = read.question("Enter the Number :")
+utility.Coupen(number)
