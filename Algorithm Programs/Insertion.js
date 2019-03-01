@@ -1,16 +1,13 @@
 //Insertion sorted
 var utility = require('../utility/utility')
-function Sort() {
- 
-    var read = utility.input();
-    read.question("Enter the size of array : ", function (num) {
-        var arr1 = [];
-        arr1 = utility.CreateArray(num),
-            arr1 = utility.Insertion(arr1),
+var read = require('readline-sync');
 
-            read.close();
-        console.log("After Insertion sorting : " + arr1);
+var num = read.question("Enter the size of array : ")
 
-    })
-}
-Sort();
+var arr1 = [];
+arr1 = utility.CreateArray1(num),
+    arr1 = utility.Insertion(arr1),
+
+
+    console.log("After Insertion sorting : " + arr1);
+

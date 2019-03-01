@@ -22,9 +22,14 @@ module.exports = {
     //======================================================================================
 
     // First Program = Replace String 
-    /*
-    User Input and Replace String Template “Hello <<UserName>>, How are you?”
-    Username =  User Input 
+    /*  Desc :-
+        @author   - Bhupendra
+        @Program  - Replace String 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
+        User Input and Replace String Template “Hello <<UserName>>, How are you?”
+        Username =  User Input 
     */
 
     Replace(username) {
@@ -44,6 +49,11 @@ module.exports = {
     //Second Program = flip coin
 
     /*
+        @author   - Bhupendra
+        @Program  - Flipcoin 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
         Flip Coin and print percentage of Heads and Tails
         num = User Input
         @varibale = tails, heads, j
@@ -67,7 +77,7 @@ module.exports = {
             }
         }
         /*
-       Print head percentage & tail percentage
+        Print head percentage & tail percentage
        */
         var tailsperc = tails / num * 100;
         console.log("Tails percentage :" + tailsperc);
@@ -81,8 +91,14 @@ module.exports = {
     //Third Program = Leap Year
 
     /*
-    i = User input
-    then we use if loop for check the condition
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Leap Year 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
+        i = User input
+        then we use if loop for check the condition
     */
 
     Leapyear(i) {
@@ -98,9 +114,15 @@ module.exports = {
     //Forth Program = power of 2
 
     /*
-    Desc - This program takes a command-line argument N and prints a table of the 
-    powers of 2 that are less than or equal to 2^N.
-    r = User Input
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Power of 2 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
+        This program takes a command-line argument N and prints a table of the 
+        powers of 2 that are less than or equal to 2^N.
+        r = User Input
     */
 
     Power(r) {
@@ -128,8 +150,14 @@ module.exports = {
     // Fifth Program = Harmonic Number
 
     /*
-    Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N 
-    value = User Input
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Harmonic Number 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
+        Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N 
+        value = User Input
     */
 
     Harmonic(value) {
@@ -150,8 +178,14 @@ module.exports = {
     //Sixth Program = PrimeFactors
 
     /*
-     Computes the prime factorization of N using brute force.
-     numbers = User Input
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Prime Factors 
+        @version  - 1.0
+        @Date     - 21/02/2019
+
+        Computes the prime factorization of N using brute force.
+        numbers = User Input
     */
 
     Factors(numbers) {
@@ -177,9 +211,14 @@ module.exports = {
     //Seventh Program = Gambler
 
     /*
-    Desc - Simulates a gambler who start with $stake and place fair $1 bets until he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of times he/she wins and the number of bets he/she makes. Run the experiment N times, averages the results, and prints them out.
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Gambler 
+        @version  - 1.0
+        @Date     - 22/02/2019
 
-    Stake ,goal, bets = user Inputs
+        Simulates a gambler who start with $stake and place fair $1 bets until he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of times he/she wins and the number of bets he/she makes. Run the experiment N times, averages the results, and prints them out.
+        Stake ,goal, bets = user Inputs
     */
     Gambler1(stake, goal, bets) {
 
@@ -227,11 +266,17 @@ module.exports = {
     // Eighth Program = Coupen number
 
     /*
-    Desc - Given N distinct Coupon Numbers, how many random numbers do you need to generate distinct coupon number? This program simulates this random process.
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Coupen Number 
+        @version  - 1.0
+        @Date     - 22/02/2019
 
-    Number = UserInput
-    Math.random condition is take random number from 0 to 1, 
-    and multiply by max variable.
+        Given N distinct Coupon Numbers, how many random numbers do you need to generate distinct coupon number? This program simulates this random process.
+
+        Number = UserInput
+        Math.random condition is take random number from 0 to 1, 
+        and multiply by max variable.
     */
 
     Coupen(number) {
@@ -253,10 +298,15 @@ module.exports = {
     //Ningth program = 2-D array
 
     /*
-    Desc - A library for reading in 2D arrays of integers, doubles, or booleans from standard input and printing them out to standard output.
-
-    row and col = User Input,
-     declare arr array
+        Desc :-
+        @author   - Bhupendra
+        @Program  - 2-D array 
+        @version  - 1.0
+        @Date     - 22/02/2019
+    
+        A library for reading in 2D arrays of integers, doubles, or booleans from standard input and printing them out to standard output.
+        row and col = User Input,
+        declare arr array
     */
 
     Array(row, col) {
@@ -284,10 +334,15 @@ module.exports = {
     //Tenth Program = Triplet
 
     /*
-     Desc -> A program with cubic running time. Read in N integers and counts the   number of triples that sum to exactly 0.
- 
-     m = User Input,
-     Declare arr array
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Triplet 
+        @version  - 1.0
+        @Date     - 22/02/2019
+
+        A program with cubic running time. Read in N integers and counts the   number of triples that sum to exactly 0.
+        m = User Input,
+        Declare arr array
      */
 
 
@@ -325,8 +380,14 @@ module.exports = {
     //Eleventh Program = Distance
 
     /*
-    Fisrt = UserInput First value
-    Second = UserInput Second Value
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Distance 
+        @version  - 1.0
+        @Date     - 22/02/2019
+
+        Fisrt = UserInput First value
+        Second = UserInput Second Value
     */
 
     Distance(first, second) {
@@ -341,8 +402,14 @@ module.exports = {
     //twelfth program = Permutation
 
     /*
-    String = UserInput
-    Print all the permutations for given string
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Permutation 
+        @version  - 1.0
+        @Date     - 23/02/2019
+
+        String = UserInput
+        Print all the permutations for given string
     */
 
     Permutation(string) {
@@ -365,41 +432,35 @@ module.exports = {
     // Thirteen Program = Stopwatch
 
     /*
-    Desc -> Write a Stopwatch Program for measuring the time that elapses between the start and end clicks
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Stopwatch 
+        @version  - 1.0
+        @Date     - 23/02/2019
+
+        Write a Stopwatch Program for measuring the time that elapses between the start and end clicks.
 
     */
 
 
     StopWatch() {
-        // After 1 Enter time will start
-        var k = parseInt(read.question("Press Enter 1 for start the time :"));
-        if (k == 1) {
-            var p = new Date();
-            k = p.getUTCSeconds();
-        } else {
-            console.log("Wrong number!, Check your number for start time");
-        }
-        // After 2 Enter time will be stop
-        var y = parseInt(read.question("Press Enter for stop the time :"));
-        if (y == 2) {
-            var d = new Date();
-            y = d.getUTCSeconds();
-        } else {
-            console.log("Wrong number!, Check your number for end time");
-
-        }
-        // Measure the elapsed time between start and end
-        console.log("Elapsed time : " + (y - k));
-
+        var p = new Date();
+        var time = p.getUTCSeconds();
+        return time;
     },
 
     //======================================================================================
-    //Quadratic Program
+    //Fifteenth program = Quadratic Program
 
     /*
-    Desc - find the roots of the equation a*x*x + b*x + c. Since the equation is x*x, hence there are 2 roots by using formula.
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Quadratic 
+        @version  - 1.0
+        @Date     - 24/02/2019
 
-    a, b, c are the User Inputs
+        find the roots of the equation a*x*x + b*x + c. Since the equation is x*x, hence there are 2 roots by using formula.
+        a, b, c are the User Inputs
     */
 
     Quadratic(a, b, c) {
@@ -419,13 +480,18 @@ module.exports = {
     },
 
     //======================================================================================
-    // WindChill
+    // Sixteenth Program = WindChill
 
     /*
-    Desc -  WindChill.java that takes two double command-line arguments t and v and prints the wind chill. Use Math.pow(a, b) to compute ab. 
-    Given the temperature t (in Fahrenheit) and the wind speed v (in miles per hour), the National Weather Service defines the effective temperature (the wind chill) to be
-    
-    v & t are the User Inputs
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Windchill 
+        @version  - 1.0
+        @Date     - 24/02/2019
+
+        WindChill.java that takes two double command-line arguments t and v and prints the wind chill. Use Math.pow(a, b) to compute ab. 
+        Given the temperature t (in Fahrenheit) and the wind speed v (in miles per hour), the National Weather Service defines the effective temperature (the wind chill) to be.
+        v & t are the User Inputs
     */
 
     Wind(v, t) {
@@ -456,8 +522,14 @@ module.exports = {
     // First Program = Anagram Program
 
     /*
-    Desc -> One string is an anagram of another if the second is simply a rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
-    Take 2 Strings as Input such abcd and dcba and Check for Anagrams.
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Anagram 
+        @version  - 1.0
+        @Date     - 24/02/2019
+
+        One string is an anagram of another if the second is simply a rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
+        Take 2 Strings as Input such abcd and dcba and Check for Anagrams.
     */
 
 
@@ -494,9 +566,15 @@ module.exports = {
     //Second Program = PrimeNumbers Range
 
     /*
-    from = UserInput from 
-    upto = User Input upto
-    Print all the prime numbers Between from and upto range
+        Desc :-
+        @author   - Bhupendra
+        @Program  - PrimeNumber Range 
+        @version  - 1.0
+        @Date     - 24/02/2019
+
+        from = UserInput from 
+        upto = User Input upto
+        Print all the prime numbers Between from and upto range
     */
 
     Prime(from, upto) {
@@ -526,21 +604,23 @@ module.exports = {
     },
 
     //======================================================================================
-    //Binary Search
+    //Forth Program = Sorting and Dearching
+
+    /*
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Sorting and Searching 
+        @version  - 1.0
+        @Date     - 25/02/2019
+    */
 
     BinarySearch(arr, low, high, key) {
         var sort = this.Insertion(arr);
         console.log(sort);
-
-
-
-
         while (low <= high) {
             var mid = Math.floor((high + low) / 2);
-            
             if (sort[mid] == key) {
                 return mid;
-
                 //check all the elements in right side
             } else if (key > sort[mid]) {
                 low = mid + 1;
@@ -548,27 +628,55 @@ module.exports = {
                 //check all the elements in left side
             } else {
                 high = mid - 1;
-
             }
-
         }
         //for invalid condition
         return -1;
     },
 
-    //========================================================================================
-    //Fourth Program = Search and sorts
+    Insertion(arr1) {
+        var temp;
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = i; j > 0; j--) {
 
-    //Fourth Program in main function
+                if (arr1[j] < arr1[j - 1]) {
+                    temp = arr1[j];
+                    arr1[j] = arr1[j - 1];
+                    arr1[j - 1] = temp;
+                }
+            }
+        }
+        return arr1;
+    },
 
+    Bubble(arr) {
+        var temp;
+        for (var j = 0; j < arr.length; j++) {
+            for (var k = 0; k < (arr.length - j - 1); k++) {
+                // if arr[k] > arr[k + 1], then Swapping 
+                if (arr[k] > arr[k + 1]) {
+                    temp = arr[k];
+                    arr[k] = arr[k + 1];
+                    arr[k + 1] = temp;
+
+                }
+            }
+        }
+        return arr;
+    },
 
     //======================================================================================
     //Fifth Program = Find a number
 
     /*
-    Desc -> takes a command-line argument N, asks you to think of a number between 0 and N-1, where N = 2^n, and always guesses the answer with n questions.
-
-    */
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Find a number 
+        @version  - 1.0
+        @Date     - 25/02/2019
+        
+        Takes a command-line argument N, asks you to think of a number between 0 and N-1, where N = 2^n, and always guesses the answer with n questions.
+     */
 
     Findnumber(low, high) {
         var mid = low + Math.floor((high - low) / 2)
@@ -598,9 +706,14 @@ module.exports = {
     //Sixth Program = Search the word
 
     /*
-    Desc -> Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Search word from file 
+        @version  - 1.0
+        @Date     - 25/02/2019
 
-    word = User Input, Which you found
+        Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
+        word = User Input, Which you found
     */
 
     Binary(word) {
@@ -622,13 +735,19 @@ module.exports = {
     //CreateArray for Integer
 
     /*
-    Desc - For Create Array Program
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Create array 
+        @version  - 1.0
+        @Date     - 25/02/2019
+
+        For Create Array Program
     */
     CreateArray(num) {
         var arr = [];
         for (var val = 0; val < num; val++) {
             arr[val] = read.questionInt("Enter your " + val + " Element : ");
-            //console.log(arr[val])
+
         }
 
         return arr;
@@ -639,7 +758,7 @@ module.exports = {
         var arr1 = [];
         for (var val = 0; val < num; val++) {
             arr1[val] = read.question("Enter your " + val + " String : ");
-            console.log(arr1[val])
+
         }
 
         return arr1;
@@ -649,9 +768,15 @@ module.exports = {
     //Seventh Program = Insertion Sorting
 
     /*
-    Desc -> Reads in strings from standard input and prints them in sorted order.
-    Uses insertion sort.
-    arr = user Input string, call the main function and sort the array
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Insertion sort 
+        @version  - 1.0
+        @Date     - 25/02/2019
+
+        Reads in strings from standard input and prints them in sorted order.
+        Uses insertion sort.
+        arr = user Input string, call the main function and sort the array
     */
 
     Insertion(arr1) {
@@ -673,8 +798,14 @@ module.exports = {
     //Eighth Program = Bubble sort
 
     /*
-    Desc - Reads in integers prints them in sorted order using Bubble Sort
-    arr = user Input, call the main function and sort the array
+        Desc :-
+        @author   - Bhupendra
+        @Program  - PrimeNumber Range 
+        @version  - 1.0
+        @Date     - 25/02/2019
+
+        Reads in integers prints them in sorted order using Bubble Sort
+        arr = user Input, call the main function and sort the array
     */
 
     Bubble(arr) {
@@ -697,10 +828,15 @@ module.exports = {
     //Tenth Program = Vending Machine
 
     /*
-    Desc -> There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be returned by Vending Machine. Write a Program to calculate the minimum number of Notes as well as the Notes to be returned by the Vending Machine as a Change
-    
-    amount = User Input
-    i & notes Initially set 0;
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Vending Machine
+        @version  - 1.0
+        @Date     - 26/02/2019
+
+        There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be returned by Vending Machine. Write a Program to calculate the minimum number of Notes as well as the Notes to be returned by the Vending Machine as a Change.
+        amount = User Input
+        i & notes Initially set 0;
     */
 
     VendingMachine(amount, i, notes) {
@@ -727,9 +863,14 @@ module.exports = {
     //Eleventh Program = dayofweek
 
     /*
-    Desc - dayOfWeek static function that takes a date as input and prints the day of the week that date falls on. Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar 
-    
-    d, m, y take input from command line arguments
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Day of Week 
+        @version  - 1.0
+        @Date     - 26/02/2019
+
+        Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar. 
+        d, m, y take input from command line arguments
     */
 
     dayofweek(d, m, y) {
@@ -744,9 +885,14 @@ module.exports = {
     //Twflth Program = Temperatur Conversion
 
     /*
-    Desc - given the temperature in fahrenheit or celsius as input outputs the temperature in Celsius or viceversa using the formula.
-    
-    Take input in F or C and converts (F - C ) or (C - F)
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Temperature Conversion 
+        @version  - 1.0
+        @Date     - 26/02/2019
+
+        Given the temperature in fahrenheit or celsius as input outputs the temperature in Celsius or viceversa using the formula.
+        Take input in F or C and converts (F - C ) or (C - F)
     
     */
 
@@ -778,7 +924,13 @@ module.exports = {
     //Thirtheen Program = monthlyPayment Program
 
     /*
-    Desc - monthlyPayment that reads in three command-line arguments P, Y, and R and calculates the monthly payments you would have to make over Y years to pay off a P principal loan amount at R per cent interest compounded monthly
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Monthly Payment 
+        @version  - 1.0
+        @Date     - 26/02/2019
+
+        MonthlyPayment that reads in three command-line arguments P, Y, and R and calculates the monthly payments you would have to make over Y years to pay off a P principal loan amount at R per cent interest compounded monthly
     */
     Payment(P, Y, R) {
         var n = 12 * Y;
@@ -793,9 +945,14 @@ module.exports = {
     //Forteenth Program = Newton's Program
 
     /*
-    Desc - function sqrt  to compute the square root of a nonnegative number c given in the input using Newton's method:
-     
-    c = User Input
+        Desc :-
+        @author   - Bhupendra
+        @Program  - PrimeNumber Range 
+        @version  - 1.0
+        @Date     - 27/02/2019
+
+        Function sqrt  to compute the square root of a nonnegative number c given in the input using Newton's method:
+        c = User Input
     */
 
     Newton(c) {
@@ -813,9 +970,14 @@ module.exports = {
     //Fifteenth Program = toBinary
 
     /*
-    Desc - take any number any convert into Binary form
-    
-    n = UserInput
+        Desc :-
+        @author   - Bhupendra
+        @Program  - ToBinary conversion 
+        @version  - 1.0
+        @Date     - 27/02/2019
+
+        Take any number any convert into Binary form
+        n = UserInput
     */
 
     toBinary(n) {
