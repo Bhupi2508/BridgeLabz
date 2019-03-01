@@ -30,13 +30,13 @@ module.exports = {
         Username =  User Input 
     */
 
-    Replace(username) {
+    replaceString(username) {
+        //username is greater than 3 letters
         if (username.length > 3) {
             console.log("Hello " + username + ", How are you")
         }
         else {
             console.log("Enter username more than 3 letters");
-
         }
     },
 
@@ -57,15 +57,16 @@ module.exports = {
         @varibale = tails, heads, j
     */
 
-    Flipcoin(num) {
+    flipCoin(num) {
         var tails = 0;
         var heads = 0;
-        var j;
+        
         /*
          Use Random Function to get value between 0 and 1.
          @condition : If < 0.5 then tails or heads
         */
-        for (j = 0; j < num; j++) {
+       if(num == parseInt(num)){
+        for (var j = 0; j < num; j++) {
             if (Math.random() < 0.5) {
                 console.log("Tails");
                 tails++;
@@ -74,6 +75,7 @@ module.exports = {
                 heads++;
             }
         }
+    
         /*
         Print head percentage & tail percentage
        */
@@ -81,6 +83,10 @@ module.exports = {
         console.log("Tails percentage :" + tailsperc);
         var headsperc = heads / num * 100;
         console.log("Heads Percentage :" + headsperc);
+    }else{
+        console.log("Please Enter Integer");
+        
+    }
     },
 
 
@@ -162,7 +168,7 @@ module.exports = {
         var i;
         var sum = 0;
         for (i = 1; i <= value; i++) {
-            if (value!= 0) {
+            if (value != 0) {
                 sum = sum + 1 / i;
             } else {
                 console.log("Enter non-zero " + value);
@@ -218,7 +224,7 @@ module.exports = {
         Simulates a gambler who start with $stake and place fair $1 bets until he/she goes broke (i.e. has no money) or reach $goal. Keeps track of the number of times he/she wins and the number of bets he/she makes. Run the experiment N times, averages the results, and prints them out.
         Stake ,goal, bets = user Inputs
     */
-    
+
     Gambler1(stake, goal, bets) {
 
         var win = 0;
@@ -319,7 +325,7 @@ module.exports = {
                 //Take varibale from input
 
                 arr[i][j] = read.question("");
-                }
+            }
         }
         // print all the variable with row and col
         for (var k = 0; k < row; k++) {
@@ -352,7 +358,7 @@ module.exports = {
 
         for (var j = 0; j < m; j++) {
             arr[j] = Number(read.question(""));
-            }
+        }
 
         for (var j = 0; j < m - 2; j++) {
             k = j + 1;
@@ -435,7 +441,7 @@ module.exports = {
         Write a Stopwatch Program for measuring the time that elapses between the start and end clicks.
 
     */
-    
+
     StopWatch() {
         var p = new Date();
         var time = p.getUTCSeconds();
@@ -555,6 +561,21 @@ module.exports = {
         }
     },
 
+    //Anagram for Integer
+
+    Anagram1(j, k) {
+        var val1 = j.toString();
+        var val2 = k.toString();
+        val1 = val1.toLowerCase().split('').sort().join('').trim();
+        val2 = val2.toLowerCase().split('').sort().join('').trim();
+
+        if (val1 == val2) {
+
+            console.log("Anagram are : " + val1, val2);
+
+        }
+    },
+
     //=====================================================================================
     //Second Program = PrimeNumbers Range
 
@@ -573,7 +594,7 @@ module.exports = {
     Prime(from, upto) {
         var k = parseInt(from);
         var j = parseInt(upto);
-        var i, t;
+        var i, t, arr = [];
 
         if (k < j) {
             for (i = k; i <= j; i++) {
@@ -587,14 +608,33 @@ module.exports = {
                     }
                 }
                 if (b == false) {
-                    console.log(i + " ");
+                    arr.push(i)
                 }
             }
         } else {
             console.log("Last number is less than starting number, Please Enter correct num");
 
         }
+        return arr;
+
     },
+
+    //=====================================================================================
+    //Palindrome
+
+    Palindrome(str) {
+        var str1 = parseInt(str)
+        var len = str.length;
+        var mid = Math.floor(len / 2);
+
+        for (var i = 0; i < mid; i++) {
+            if (str1[i] !== str1[len - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    },
+
 
     //=====================================================================================
     //Forth Program = Sorting and Dearching
@@ -673,7 +713,7 @@ module.exports = {
 
     Findnumber(low, high) {
         var mid = low + Math.floor((high - low) / 2)
-        
+
         if (low < high) {
             //if value is alternate one y one
             if (low == high - 1) {
@@ -684,7 +724,7 @@ module.exports = {
                 if (c == 'n')
                     return high;
             }
-            c = readline.question("Is the number " + mid + "-" +high + " if yes, press 'y'. Else Press 'n' : ")
+            c = readline.question("Is the number " + mid + "-" + high + " if yes, press 'y'. Else Press 'n' : ")
             if (c == 'y')
                 //return the mid value
                 mid = this.Findnumber(mid, high)
@@ -704,7 +744,7 @@ module.exports = {
         @Program  - Search word from file 
         @version  - 1.0
         @Date     - 25/02/2019
-
+    
         Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
         word = User Input, Which you found
     */
@@ -733,7 +773,7 @@ module.exports = {
         @Program  - Create array 
         @version  - 1.0
         @Date     - 25/02/2019
-
+    
         For Create Array Program
     */
     CreateArray(num) {
@@ -766,7 +806,7 @@ module.exports = {
         @Program  - Insertion sort 
         @version  - 1.0
         @Date     - 25/02/2019
-
+    
         Reads in strings from standard input and prints them in sorted order.
         Uses insertion sort.
         arr = user Input string, call the main function and sort the array
@@ -791,15 +831,15 @@ module.exports = {
     //Eighth Program = Bubble sort
 
     /*
-        Desc :-
-        @author   - Bhupendra
-        @Program  - PrimeNumber Range 
-        @version  - 1.0
-        @Date     - 25/02/2019
-
-        Reads in integers prints them in sorted order using Bubble Sort
-        arr = user Input, call the main function and sort the array
-    */
+         Desc :-
+         @author   - Bhupendra
+         @Program  - PrimeNumber Range 
+         @version  - 1.0
+         @Date     - 25/02/2019
+    
+         Reads in integers prints them in sorted order using Bubble Sort
+         arr = user Input, call the main function and sort the array
+     */
 
     Bubble(arr) {
         var temp;
@@ -818,6 +858,56 @@ module.exports = {
     },
 
     //=====================================================================================
+    //Ninth Program = Merge Sort
+
+    /*
+       Desc :-
+       @author   - Bhupendra
+       @Program  - Merge sort 
+       @version  - 1.0
+       @Date     - 25/02/2019
+    
+       To Merge Sort an array, we divide it into two halves, sort the two halves independently, and then merge the results to sort the full array. To sort a[lo,hi),we use the following recursive strategy
+    */
+
+    mergeSort(arr) {
+
+        if (arr.length === 1) {
+            // return once we hit an array with a single item
+            return arr
+        }
+
+        const mid = Math.floor(arr.length / 2)
+        const left = arr.slice(0, mid)
+        const right = arr.slice(mid)
+
+        return this.merge(
+            this.mergeSort(left),
+            this.mergeSort(right)
+        )
+    },
+
+    // compare the arrays item by item and return the concatenated result
+    merge(left, right) {
+        let result = []
+        let indexLeft = 0
+        let indexRight = 0
+
+        while (indexLeft < left.length && indexRight < right.length) {
+            if (left[indexLeft] < right[indexRight]) {
+                result.push(left[indexLeft])
+                indexLeft++
+            } else {
+                result.push(right[indexRight])
+                indexRight++
+            }
+        }
+
+        return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+
+    },
+
+    //=====================================================================================
     //Tenth Program = Vending Machine
 
     /*
@@ -826,7 +916,7 @@ module.exports = {
         @Program  - Vending Machine
         @version  - 1.0
         @Date     - 26/02/2019
-
+    
         There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be returned by Vending Machine. Write a Program to calculate the minimum number of Notes as well as the Notes to be returned by the Vending Machine as a Change.
         amount = User Input
         i & notes Initially set 0;
@@ -861,15 +951,16 @@ module.exports = {
         @Program  - Day of Week 
         @version  - 1.0
         @Date     - 26/02/2019
-
+    
         Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar. 
         d, m, y take input from command line arguments
     */
 
-    dayofweek(d, m, y) {
+
+    dayOfWeek(d, m, y) {
         var y0 = y - Math.floor((14 - m) / 12);
         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-        var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
+        m0 = m + 12 * Math.floor((14 - m) / 12) - 2;
         var d0 = (d + x + Math.floor((31 * m0) / 12)) % 7;
         return d0;
     },
@@ -883,10 +974,10 @@ module.exports = {
         @Program  - Temperature Conversion 
         @version  - 1.0
         @Date     - 26/02/2019
-
+    
         Given the temperature in fahrenheit or celsius as input outputs the temperature in Celsius or viceversa using the formula.
         Take input in F or C and converts (F - C ) or (C - F)
-    
+     
     */
 
     Temp() {
@@ -922,7 +1013,7 @@ module.exports = {
         @Program  - Monthly Payment 
         @version  - 1.0
         @Date     - 26/02/2019
-
+    
         MonthlyPayment that reads in three command-line arguments P, Y, and R and calculates the monthly payments you would have to make over Y years to pay off a P principal loan amount at R per cent interest compounded monthly
     */
     Payment(P, Y, R) {
@@ -943,7 +1034,7 @@ module.exports = {
         @Program  - PrimeNumber Range 
         @version  - 1.0
         @Date     - 27/02/2019
-
+    
         Function sqrt  to compute the square root of a nonnegative number c given in the input using Newton's method:
         c = User Input
     */
@@ -968,7 +1059,7 @@ module.exports = {
         @Program  - ToBinary conversion 
         @version  - 1.0
         @Date     - 27/02/2019
-
+    
         Take any number any convert into Binary form
         n = UserInput
     */
@@ -983,7 +1074,7 @@ module.exports = {
             n = Math.floor(n / 2);
             i++
         }
-       
+
         //Print the reverse order 
         for (var j = arr.length - 1; j >= 0; j--) {
             sum = sum + arr[j] + " ";

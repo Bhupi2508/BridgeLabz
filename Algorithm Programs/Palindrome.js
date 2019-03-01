@@ -1,12 +1,10 @@
-// Palindrome
+// Newton's Program
 var utility = require('../utility/utility')
-function Drome(){
-    var read = utility.input();
-    read.question("Starting From : ",function(from){
-        read.question("Range upto : ",function(upto){
-            utility.Palindrome(from, upto),
-            read.close();
-        })
-    })
-}
-Drome();
+var read = require('readline-sync');
+var str = read.question("Enter the string : ");
+var r = utility.Palindrome(str);
+if(r == true){
+console.log("String are Palindrome : " + str);
+}else
+    console.log("String are not Palindrome : " + str);
+    
