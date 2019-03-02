@@ -60,33 +60,33 @@ module.exports = {
     flipCoin(num) {
         var tails = 0;
         var heads = 0;
-        
+
         /*
          Use Random Function to get value between 0 and 1.
          @condition : If < 0.5 then tails or heads
         */
-       if(num == parseInt(num)){
-        for (var j = 0; j < num; j++) {
-            if (Math.random() < 0.5) {
-                console.log("Tails");
-                tails++;
-            } else {
-                console.log("Heads");
-                heads++;
+        if (num == parseInt(num)) {
+            for (var j = 0; j < num; j++) {
+                if (Math.random() < 0.5) {
+                    console.log("Tails");
+                    tails++;
+                } else {
+                    console.log("Heads");
+                    heads++;
+                }
             }
+
+            /*
+            Print head percentage & tail percentage
+           */
+            var tailsperc = tails / num * 100;
+            console.log("Tails percentage :" + tailsperc);
+            var headsperc = heads / num * 100;
+            console.log("Heads Percentage :" + headsperc);
+        } else {
+            console.log("Please Enter Integer");
+
         }
-    
-        /*
-        Print head percentage & tail percentage
-       */
-        var tailsperc = tails / num * 100;
-        console.log("Tails percentage :" + tailsperc);
-        var headsperc = heads / num * 100;
-        console.log("Heads Percentage :" + headsperc);
-    }else{
-        console.log("Please Enter Integer");
-        
-    }
     },
 
 
@@ -752,14 +752,10 @@ module.exports = {
     Binary(word) {
         // read the file from folder
         var file = require('fs');
-        var f = file.readFileSync('/home/admin1/bhupi/file.txt', 'utf8');
+        var f = file.readFileSync('/home/admin1/bhupi/Algorithm Programs/file.txt', 'utf8');
+        
         var arr = f.split(" ");
-        if (arr.includes(word)) {
-            console.log("Searching word " + word + " is there in file");
-        }
-        else {
-            console.log("Searching word " + word + " is Not there in file");
-        }
+        return arr;
     },
 
 
@@ -1084,4 +1080,5 @@ module.exports = {
 }
 
 
+    
 
