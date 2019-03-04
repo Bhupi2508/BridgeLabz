@@ -105,11 +105,11 @@ module.exports = {
         then we use if loop for check the condition
     */
 
-    Leapyear(i) {
-        if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
-            console.log("Leap year :" + i)
+    leapYear(year) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            console.log("Leap year :" + year)
         } else {
-            console.log("Not a Leap year : " + i);
+            console.log("Not a Leap year : " + year);
         }
     },
 
@@ -129,7 +129,7 @@ module.exports = {
         r = User Input
     */
 
-    Power(r) {
+    power(num) {
         var power = 1;
         var j;
         /*
@@ -137,7 +137,7 @@ module.exports = {
          @Condition : repeat until i equals N
          */
         if (r < 31) {
-            for (j = 1; j < r; j++) {
+            for (j = 1; j < num; j++) {
 
                 power = 2 * power;
                 console.log(2 + "^" + j + " = " + power);
@@ -164,14 +164,14 @@ module.exports = {
         value = User Input
     */
 
-    Harmonic(value) {
+    harmonic(number) {
         var i;
         var sum = 0;
-        for (i = 1; i <= value; i++) {
-            if (value != 0) {
+        for (i = 1; i <= number; i++) {
+            if (number != 0) {
                 sum = sum + 1 / i;
             } else {
-                console.log("Enter non-zero " + value);
+                console.log("Enter non-zero " + number);
             }
 
         }
@@ -192,20 +192,20 @@ module.exports = {
         numbers = User Input
     */
 
-    Factors(numbers) {
+    factors(number) {
 
         //@condition : Traverse till i*i <= N instead of i <= N for efficiency.
 
-        for (var k = 2; k * k <= numbers; k++) {
-            while (numbers % k == 0) {
+        for (var k = 2; k * k <= number; k++) {
+            while (number % k == 0) {
                 console.log("Factors :" + k);
-                numbers = numbers / k;
+                number = number / k;
 
             }
         }
         //for the last element
-        if (numbers > 2) {
-            console.log("Factors :" + numbers);
+        if (number > 2) {
+            console.log("Factors :" + number);
 
         }
 
@@ -225,7 +225,7 @@ module.exports = {
         Stake ,goal, bets = user Inputs
     */
 
-    Gambler1(stake, goal, bets) {
+    gambler1(stake, goal, bets) {
 
         var win = 0;
         var loss = 0;
@@ -284,7 +284,7 @@ module.exports = {
         and multiply by max variable.
     */
 
-    Coupen(number) {
+    coupen(number) {
         var max = 1000;
         var temp;
 
@@ -314,7 +314,7 @@ module.exports = {
         declare arr array
     */
 
-    Array(row, col) {
+    twoDArray(row, col) {
         var arr = []
         console.log("Elements");
 
@@ -349,18 +349,18 @@ module.exports = {
      */
 
 
-    Triplet(m) {
+    triplet(size) {
         var k;
         var l;
         var count = 0;
         var arr = [];
         console.log("Elements");
 
-        for (var j = 0; j < m; j++) {
+        for (var j = 0; j < size; j++) {
             arr[j] = Number(read.question(""));
         }
 
-        for (var j = 0; j < m - 2; j++) {
+        for (var j = 0; j < size - 2; j++) {
             k = j + 1;
             l = j + 2;
             // distinct triples (i, j, k) such that a[i] + a[j] + a[k] = 0
@@ -390,9 +390,9 @@ module.exports = {
         Second = UserInput Second Value
     */
 
-    Distance(first, second) {
+    distance(firstNumber, secondNumber) {
         // Formula = distance = sqrt(x*x + y*y)
-        var k = ((first * first) + (second * second));
+        var k = ((firstNumber * firstNumber) + (secondNumber * secondNumber));
         var temp = Math.sqrt(k);
         console.log(temp);
 
@@ -412,20 +412,26 @@ module.exports = {
         Print all the permutations for given string
     */
 
-    Permutation(string) {
-        var r = reverse.string
-        var l = r.length
-        for (var k = 0; k < l; k++) {
-            if (string != r) {
-                console.log(r);
+    permutation(string) {
 
-            }
-            else {
-                continue
+        var results = [];
+
+        if (string.length === 1) {
+            results.push(string);
+            return results;
+        }
+
+        for (var i = 0; i < string.length; i++) {
+            var firstChar = string[i];
+            var charsLeft = string.substring(0, i) + string.substring(i + 1);
+            var innerPermutations = this.permutation(charsLeft);
+            for (var j = 0; j < innerPermutations.length; j++) {
+                results.push(firstChar + innerPermutations[j]);
             }
         }
-        console.log(typeof string);
+        return results;
     },
+
 
 
     //=====================================================================================
@@ -442,7 +448,7 @@ module.exports = {
 
     */
 
-    StopWatch() {
+    stopWatch() {
         var p = new Date();
         var time = p.getUTCSeconds();
         return time;
@@ -457,12 +463,12 @@ module.exports = {
         @Program  - Quadratic 
         @version  - 1.0
         @Date     - 24/02/2019
-
+    
         find the roots of the equation a*x*x + b*x + c. Since the equation is x*x, hence there are 2 roots by using formula.
         a, b, c are the User Inputs
     */
 
-    Quadratic(a, b, c) {
+    quadratic(a, b, c) {
 
         delta = ((b * b) - (4 * a * c));
         if (delta > 0) {
@@ -487,13 +493,13 @@ module.exports = {
         @Program  - Windchill 
         @version  - 1.0
         @Date     - 24/02/2019
-
+    
         WindChill.java that takes two double command-line arguments t and v and prints the wind chill. Use Math.pow(a, b) to compute ab. 
         Given the temperature t (in Fahrenheit) and the wind speed v (in miles per hour), the National Weather Service defines the effective temperature (the wind chill) to be.
         v & t are the User Inputs
     */
 
-    Wind(v, t) {
+    windChill(v, t) {
         // t is larger than 50 in absolute value or if v is larger than 120 or less than 3
         if (t < 50 && (v < 120 && v > 3)) {
             var w = (35.74 + 0.6215 * t + (0.4275 * t - 35.75) * (Math.pow(v, 0.16)));
@@ -526,15 +532,15 @@ module.exports = {
         @Program  - Anagram 
         @version  - 1.0
         @Date     - 24/02/2019
-
+    
         One string is an anagram of another if the second is simply a rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
         Take 2 Strings as Input such abcd and dcba and Check for Anagrams.
     */
 
 
-    Anagram(string1, string2) {
-        var val1 = string1;
-        var val2 = string2;
+    anagram(firstString, secondString) {
+        var val1 = firstString;
+        var val2 = secondString;
         // First Convert in lowercase
         val1 = val1.toLowerCase()
         console.log("after lowercase :" + val1);
@@ -563,13 +569,15 @@ module.exports = {
 
     //Anagram for Integer
 
-    Anagram1(j, k) {
+    // j & k are the integer user inputs
+    anagram1(j, k) {
         var val1 = j.toString();
         var val2 = k.toString();
         val1 = val1.toLowerCase().split('').sort().join('').trim();
         val2 = val2.toLowerCase().split('').sort().join('').trim();
 
         if (val1 == val2) {
+
 
             console.log("Anagram are : " + val1, val2);
 
@@ -585,15 +593,15 @@ module.exports = {
         @Program  - PrimeNumber Range 
         @version  - 1.0
         @Date     - 24/02/2019
-
+    
         from = UserInput from 
         upto = User Input upto
         Print all the prime numbers Between from and upto range
     */
 
-    Prime(from, upto) {
-        var k = parseInt(from);
-        var j = parseInt(upto);
+    primeNumber(startNumber, endNumber) {
+        var k = parseInt(startNumber);
+        var j = parseInt(endNumber);
         var i, t, arr = [];
 
         if (k < j) {
@@ -622,13 +630,16 @@ module.exports = {
     //=====================================================================================
     //Palindrome
 
-    Palindrome(str) {
-        var str1 = parseInt(str)
-        var len = str.length;
+
+    palindrome(string) {
+
+
+
+        var len = string.length;
         var mid = Math.floor(len / 2);
 
         for (var i = 0; i < mid; i++) {
-            if (str1[i] !== str1[len - 1 - i]) {
+            if (string[i] !== string[len - 1 - i]) {
                 return false;
             }
         }
@@ -647,7 +658,7 @@ module.exports = {
         @Date     - 25/02/2019
     */
 
-    BinarySearch(arr, low, high, key) {
+    binarySearch(arr, low, high, key) {
         var sort = this.Insertion(arr);
         console.log(sort);
         while (low <= high) {
@@ -667,7 +678,7 @@ module.exports = {
         return -1;
     },
 
-    Insertion(arr1) {
+    insertion(arr1) {
         var temp;
         for (var i = 0; i < arr1.length; i++) {
             for (var j = i; j > 0; j--) {
@@ -682,7 +693,7 @@ module.exports = {
         return arr1;
     },
 
-    Bubble(arr) {
+    bubble(arr) {
         var temp;
         for (var j = 0; j < arr.length; j++) {
             for (var k = 0; k < (arr.length - j - 1); k++) {
@@ -711,7 +722,7 @@ module.exports = {
         Takes a command-line argument N, asks you to think of a number between 0 and N-1, where N = 2^n, and always guesses the answer with n questions.
      */
 
-    Findnumber(low, high) {
+    findNumber(low, high) {
         var mid = low + Math.floor((high - low) / 2)
 
         if (low < high) {
@@ -727,10 +738,10 @@ module.exports = {
             c = readline.question("Is the number " + mid + "-" + high + " if yes, press 'y'. Else Press 'n' : ")
             if (c == 'y')
                 //return the mid value
-                mid = this.Findnumber(mid, high)
+                mid = this.findNumber(mid, high)
             if (c == 'n')
                 //return the mid value
-                mid = this.Findnumber(low, mid - 1)
+                mid = this.findNumber(low, mid - 1)
         }
         return mid;
     },
@@ -744,16 +755,16 @@ module.exports = {
         @Program  - Search word from file 
         @version  - 1.0
         @Date     - 25/02/2019
-    
+     
         Read in a list of words from File. Then prompt the user to enter a word to search the list. The program reports if the search word is found in the list.
         word = User Input, Which you found
     */
 
-    Binary(word) {
+    binary(word) {
         // read the file from folder
         var file = require('fs');
         var f = file.readFileSync('/home/admin1/bhupi/Algorithm Programs/file.txt', 'utf8');
-        
+
         var arr = f.split(" ");
         return arr;
     },
@@ -769,10 +780,10 @@ module.exports = {
         @Program  - Create array 
         @version  - 1.0
         @Date     - 25/02/2019
-    
+     
         For Create Array Program
     */
-    CreateArray(num) {
+    createArray(num) {
         var arr = [];
         for (var val = 0; val < num; val++) {
             arr[val] = read.questionInt("Enter your " + val + " Element : ");
@@ -783,7 +794,7 @@ module.exports = {
     },
 
     //CreateArray for String
-    CreateArray1(num) {
+    createArray1(num) {
         var arr1 = [];
         for (var val = 0; val < num; val++) {
             arr1[val] = read.question("Enter your " + val + " String : ");
@@ -802,13 +813,13 @@ module.exports = {
         @Program  - Insertion sort 
         @version  - 1.0
         @Date     - 25/02/2019
-    
+     
         Reads in strings from standard input and prints them in sorted order.
         Uses insertion sort.
         arr = user Input string, call the main function and sort the array
     */
 
-    Insertion(arr1) {
+    insertion(arr1) {
         var temp;
         for (var i = 0; i < arr1.length; i++) {
             for (var j = i; j > 0; j--) {
@@ -832,12 +843,12 @@ module.exports = {
          @Program  - PrimeNumber Range 
          @version  - 1.0
          @Date     - 25/02/2019
-    
+     
          Reads in integers prints them in sorted order using Bubble Sort
          arr = user Input, call the main function and sort the array
      */
 
-    Bubble(arr) {
+    bubble(arr) {
         var temp;
         for (var j = 0; j < arr.length; j++) {
             for (var k = 0; k < (arr.length - j - 1); k++) {
@@ -862,7 +873,7 @@ module.exports = {
        @Program  - Merge sort 
        @version  - 1.0
        @Date     - 25/02/2019
-    
+     
        To Merge Sort an array, we divide it into two halves, sort the two halves independently, and then merge the results to sort the full array. To sort a[lo,hi),we use the following recursive strategy
     */
 
@@ -912,13 +923,13 @@ module.exports = {
         @Program  - Vending Machine
         @version  - 1.0
         @Date     - 26/02/2019
-    
+     
         There is 1, 2, 5, 10, 50, 100, 500 and 1000 Rs Notes which can be returned by Vending Machine. Write a Program to calculate the minimum number of Notes as well as the Notes to be returned by the Vending Machine as a Change.
         amount = User Input
         i & notes Initially set 0;
     */
 
-    VendingMachine(amount, i, notes) {
+    vendingMachine(amount, i, notes) {
         var arr = [1000, 500, 100, 50, 10, 5, 2, 1];
 
         //if amount and i is zero
@@ -931,10 +942,10 @@ module.exports = {
             console.log(arr[i] + " notes is " + Math.floor(amount / arr[i]));
             notes = notes + Math.floor(amount / arr[i]);
             amount = amount % arr[i];
-            this.VendingMachine(amount, i + 1, notes);
+            this.vendingMachine(amount, i + 1, notes);
             return;
         }
-        this.VendingMachine(amount, i + 1, notes)
+        this.vendingMachine(amount, i + 1, notes)
     },
 
 
@@ -947,12 +958,12 @@ module.exports = {
         @Program  - Day of Week 
         @version  - 1.0
         @Date     - 26/02/2019
-    
+     
         Your program should take three command-line arguments: m (month), d (day), and y (year). For m use 1 for January, 2 for February, and so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth. Use the following formulas, for the Gregorian calendar. 
         d, m, y take input from command line arguments
     */
 
-
+    //d = day, m = month, y = year
     dayOfWeek(d, m, y) {
         var y0 = y - Math.floor((14 - m) / 12);
         var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
@@ -970,13 +981,13 @@ module.exports = {
         @Program  - Temperature Conversion 
         @version  - 1.0
         @Date     - 26/02/2019
-    
+     
         Given the temperature in fahrenheit or celsius as input outputs the temperature in Celsius or viceversa using the formula.
         Take input in F or C and converts (F - C ) or (C - F)
      
     */
 
-    Temp() {
+    temperature() {
 
         var val = read.question("Enter Your Temperature in c/C or f/F: ")
 
@@ -1009,10 +1020,12 @@ module.exports = {
         @Program  - Monthly Payment 
         @version  - 1.0
         @Date     - 26/02/2019
-    
+     
         MonthlyPayment that reads in three command-line arguments P, Y, and R and calculates the monthly payments you would have to make over Y years to pay off a P principal loan amount at R per cent interest compounded monthly
     */
-    Payment(P, Y, R) {
+
+    // P = principle, Y = year, R = rate
+    payment(P, Y, R) {
         var n = 12 * Y;
         var r = R / (12 * 100);
         var payment = (P * r) / (1 - Math.pow((1 + r), -n))
@@ -1030,12 +1043,12 @@ module.exports = {
         @Program  - PrimeNumber Range 
         @version  - 1.0
         @Date     - 27/02/2019
-    
+     
         Function sqrt  to compute the square root of a nonnegative number c given in the input using Newton's method:
         c = User Input
     */
 
-    Newton(c) {
+    newton(c) {
 
         var t = c;
         var epsilon = 1e-15;
@@ -1055,30 +1068,72 @@ module.exports = {
         @Program  - ToBinary conversion 
         @version  - 1.0
         @Date     - 27/02/2019
-    
+     
         Take any number any convert into Binary form
         n = UserInput
     */
 
-    toBinary(n) {
+    toBinary(number) {
         var sum = 0;
         var arr = [];
         var i = 0;
+        var revbinary = "";
         //Condition for Binary element
-        while (n > 0) {
-            arr[i] = n % 2;
-            n = Math.floor(n / 2);
+        while (number > 0) {
+            arr[i] = number % 2;
+            revbinary =  arr[i]+revbinary;
+            number = Math.floor(number / 2);
             i++
+        }while (revbinary.length < 8) {
+            revbinary = '0' + revbinary;
+            
         }
-
-        //Print the reverse order 
-        for (var j = arr.length - 1; j >= 0; j--) {
-            sum = sum + arr[j] + " ";
-        }
-        return sum
+        //console.log(revbinary);
+        return (revbinary)
     },
-}
+
+    //==================================================================================================
+    //Sixteenth Program = Decimal-Binary & Binary-Decimal Convert
+
+    /*
+        Desc :-
+        @author   - Bhupendra
+        @Program  - ToBinary conversion 
+        @version  - 1.0
+        @Date     - 27/02/2019
+
+        Binary.java to read an integer as an Input, convert to Binary using toBinary function and perform the following functions.
+        Swap nibbles and find the new number.
+
+    */
+
+    swapNibbles(binary) {
+            let nibble1 = binary.slice(0, 4);
+            let nibble2 = binary.slice(4);
+            newbinary = nibble2 + nibble1;
+            console.log(newbinary);
+            return newbinary;
+        },
 
 
-    
+        /**
+           * @description  :Convert decimal to binary.
+           * @param {*} binary  :binary number
+        */
+
+        toDecimal(binary) {
+            let pow = 0;
+            let decimal = 0, i = 0, m = 10;
+            while (i < 8) {
+                decimal = decimal + (binary % m) * Math.pow(2, i);
+                binary = Math.floor(binary / 10);
+                i++;
+            }
+            return decimal
+        },
+    }
+
+
+
+
 
