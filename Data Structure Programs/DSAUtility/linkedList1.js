@@ -1,4 +1,11 @@
+/*
+ * To require the required files.
+ */
 var read = require('readline-sync');
+
+/*
+LinkedList Implementation
+*/
 
 //Create a node class
 class Node {

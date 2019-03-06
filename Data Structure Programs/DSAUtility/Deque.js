@@ -1,4 +1,6 @@
-
+/*
+Deque Implementation
+*/
 
 class Deque {
     constructor() {
@@ -8,12 +10,12 @@ class Deque {
     //add function
     //add element at front
     addFront(element) {
-        this.items.unshift(element);
+       return this.items.unshift(element);
     }
 
     //add element at rear
     addRear(element) {
-        this.items.push(element);
+       return this.items.push(element);
     }
 
     //remove function

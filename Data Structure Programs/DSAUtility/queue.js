@@ -1,3 +1,6 @@
+/*
+Queue Implementation
+*/
 
 class Queue {
     constructor() {
@@ -18,7 +21,7 @@ class Queue {
     //enque function
     //enque, insert the element
     enque(data) {
-        console.log(data);
+        //console.log(data);
         if (this.top == this.capacity - 1) {
             console.log("Queue Overflow");
             return;
@@ -39,7 +42,7 @@ class Queue {
             return null;
         }
         var ele = this.items[this.front++];
-        console.log(this.front)
+       // console.log(this.front)
         this.size--;
         if (this.front > this.rear) {
             this.front = this.rear = -1;
@@ -47,7 +50,7 @@ class Queue {
         return ele;
     }
 
-    
+
     //size function
     //return the size of the element
     getSize() {
@@ -80,6 +83,137 @@ class Queue {
     }
 
 }
-    module.exports = {
-        Queue
+
+
+
+//=======================================================================================================
+// Queue for Linked List
+
+//Create a Node
+class Node {
+    constructor(element) {
+        this.element = element
+        this.next = null
     }
+}
+
+//Create LinkedList Class
+class QueueLinkedList {
+    constructor() {
+        this.head = null;
+        this.size = 0
+    }
+
+    //add element 
+    enqueue(element) {
+        var n = new Node(element)
+        if (this.head == null) {
+            this.head = n;
+            this.size++;
+            return
+        }
+        else {
+            var current = this.head;
+            while (current.next) {
+                current = current.next;
+            }
+            this.size++;
+            current.next = n;
+        }
+    }
+
+    //remove element
+    deque() {
+        if (this.size == 0) {
+            console.log("Queue is empty ");
+            return
+        }
+        else {
+            var n = this.head.element;
+            this.head = this.head.next;
+            this.size--;
+            return n
+        }
+    }
+
+    //print
+    print() {
+        try {
+            var string = " ";
+            var temp = this.head;
+            while (temp) {
+                string = string + " " + temp.element
+                temp = temp.next;
+            }
+            return string;
+        }
+        catch (error) {
+            console.log("error message");
+
+        }
+    }
+
+    //size
+    size() {
+
+        return this.size;
+    }
+
+    //isEmpty
+    isEmpty() {
+        if (this.size == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    //get element
+    getElement() {
+        var current = this.head;
+        var str = " ";
+        while (current) {
+            str = str + current.element;
+            if (current.element != null) {
+                str = str + " "
+            }
+            current.element
+        }
+        return str;
+    }
+}
+
+
+module.exports = {
+    Queue, QueueLinkedList,
+    monthof(month) {
+        switch (month) {
+            case 1: return 31;
+                break;
+            case 2: return 28;
+                break;
+            case 3: return 31;
+                break;
+            case 4: return 30;
+                break;
+            case 5: return 31;
+                break;
+            case 6: return 30;
+                break;
+            case 7: return 31;
+                break;
+            case 8: return 31;
+                break;
+            case 9: return 30;
+                break;
+            case 10: return 31;
+                break;
+            case 11: return 30;
+                break;
+            case 12: return 31;
+                break;
+
+        }
+    }
+}

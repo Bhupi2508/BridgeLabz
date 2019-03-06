@@ -1,4 +1,6 @@
-
+/*
+Stack Implementation
+*/
 
 class Stack {
     constructor() {
@@ -29,10 +31,13 @@ class Stack {
     //pop function
     //This method returns the topmost element of stack and removes it.
     pop() {
-        if (this.top === -1)
+        if (this.top === -1){
             console.log("stack is empty");
+        }
         this.size--;
         return this.items[this.top--];
+         
+        
     }
 
 
@@ -79,6 +84,19 @@ class Stack {
     getSize() {
 
         return this.size
+    }
+
+    //reverse function
+    //reverse the elements
+
+    reverseStack(element) {
+        var revstack = new Stack()
+        var n = this.getSize();
+
+        for (var i = 0; i < n; i++) {
+            var r = revstack.push(this.pop());
+        }
+        return revstack;
     }
 
 }

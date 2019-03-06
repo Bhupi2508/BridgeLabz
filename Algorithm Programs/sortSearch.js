@@ -5,8 +5,12 @@
 //bubbleSort method for integer
 //bubbleSort method for String
 
+/*
+ * To require the required files.
+ */
 var utility = require('../utility/utility')
 var read = require('readline-sync');
+
 var value = 0;
 value = parseInt(read.question(" Enter 1 for Binary Search Integer \n Enter 2 for Binary Search String \n Enter 3 for Insertion sort Integer \n Enter 4 for Insertion sort String \n Enter 5 for Bubble sort Integer \n Enter 6 for Bubble sort String  :  "));
 

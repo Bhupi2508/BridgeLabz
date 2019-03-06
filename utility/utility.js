@@ -1,6 +1,11 @@
+/*
+ * To require the required files.
+ */
+
 var read = require('readline-sync');
 var readline = require('readline-sync');
 var prompt = require('prompt-sync')
+
 module.exports = {
     input() {
         var readline = require('readline');
@@ -105,12 +110,14 @@ module.exports = {
         then we use if loop for check the condition
     */
 
-    leapYear(year) {
-        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-            console.log("Leap year :" + year)
-        } else {
-            console.log("Not a Leap year : " + year);
-        }
+    leapyear(year) {
+        
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+                return true;
+            } else {
+                return false;
+            }
+       
     },
 
 
@@ -136,6 +143,7 @@ module.exports = {
          @Condition = Only works if 0 <= N < 31 since 2^31 overflows an int
          @Condition : repeat until i equals N
          */
+
         if (r < 31) {
             for (j = 1; j < num; j++) {
 
@@ -659,7 +667,7 @@ module.exports = {
     */
 
     binarySearch(arr, low, high, key) {
-        var sort = this.Insertion(arr);
+        var sort = this.insertion(arr);
         console.log(sort);
         while (low <= high) {
             var mid = Math.floor((high + low) / 2);
@@ -1081,12 +1089,12 @@ module.exports = {
         //Condition for Binary element
         while (number > 0) {
             arr[i] = number % 2;
-            revbinary =  arr[i]+revbinary;
+            revbinary = arr[i] + revbinary;
             number = Math.floor(number / 2);
             i++
-        }while (revbinary.length < 8) {
+        } while (revbinary.length < 8) {
             revbinary = '0' + revbinary;
-            
+
         }
         //console.log(revbinary);
         return (revbinary)
@@ -1108,31 +1116,30 @@ module.exports = {
     */
 
     swapNibbles(binary) {
-            let nibble1 = binary.slice(0, 4);
-            let nibble2 = binary.slice(4);
-            newbinary = nibble2 + nibble1;
-            console.log(newbinary);
-            return newbinary;
-        },
+        let nibble1 = binary.slice(0, 4);
+        let nibble2 = binary.slice(4);
+        newbinary = nibble2 + nibble1;
+        console.log(newbinary);
+        return newbinary;
+    },
 
 
-        /**
-           * @description  :Convert decimal to binary.
-           * @param {*} binary  :binary number
-        */
+    /**
+       * @description  :Convert decimal to binary.
+       * @param {*} binary  :binary number
+    */
 
-        toDecimal(binary) {
-            let pow = 0;
-            let decimal = 0, i = 0, m = 10;
-            while (i < 8) {
-                decimal = decimal + (binary % m) * Math.pow(2, i);
-                binary = Math.floor(binary / 10);
-                i++;
-            }
-            return decimal
-        },
-    }
-
+    toDecimal(binary) {
+        let pow = 0;
+        let decimal = 0, i = 0, m = 10;
+        while (i < 8) {
+            decimal = decimal + (binary % m) * Math.pow(2, i);
+            binary = Math.floor(binary / 10);
+            i++;
+        }
+        return decimal
+    },
+}
 
 
 

@@ -1,4 +1,7 @@
 // Permutation
+/*
+ * To require the required files.
+ */
 var utility = require('../utility/utility')
 var read = require('readline-sync');
 
