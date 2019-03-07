@@ -2,13 +2,14 @@
  * To require the required files.
  */
 var utility = require('/home/admin1/bhupi/utility/utility')
+var take = require('util');
 
 //Prime Number range condition
 module.exports = {
 
     primeNumberRange(firstNum, lastNum) {
         try {
-            
+
             var arr = []
             if (firstNum < lastNum) {
                 for (var i = firstNum; i <= lastNum; i++) {
@@ -39,16 +40,16 @@ module.exports = {
         try {
             var arr = [];
             var array = [
-                ["0-100 "],
-                ["100-200 "],
-                ["200-300 "],
-                ["300-400 "],
-                ["400-500 "],
-                ["500-600 "],
-                ["600-700 "],
-                ["700-800 "],
-                ["800-900 "],
-                ["900-1000 "]
+                ["[0 - 100]  "],
+                ["[100-200]  "],
+                ["[200-300]  "],
+                ["[300-400]  "],
+                ["[400-500]  "],
+                ["[500-600]  "],
+                ["[600-700]  "],
+                ["[700-800]  "],
+                ["[800-900]  "],
+                ["[900-1000]"]
             ];
 
             for (var i = 2; i < 1000; i++) {
@@ -78,7 +79,9 @@ module.exports = {
             }
 
 
-            console.log("The Number which are prime and anagram ");
+            console.log("The Number which are prime and anagram : ");
+            console.log();
+
 
             for (let i = 0; i < array.length; i++) {
                 for (let j = 0; j < array[i].length; j++) {
@@ -86,8 +89,8 @@ module.exports = {
                     if (j == 0) {
                         take.print(" : ");
                     } else {
-                        if (j != array[i].length - 1) 
-                        take.print(",");
+                        if (j != array[i].length -1)
+                            take.print(",");
                     }
                 }
                 console.log();
@@ -99,12 +102,12 @@ module.exports = {
 
 
     //Prime number
-    primeNum(num){
-        if(num==0||num==1){
+    primeNum(num) {
+        if (num == 0 || num == 1) {
             return false;
-        }else{
-            for(let i=2;i<num;i++){
-                if(num%i==0){
+        } else {
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
                     return false;
                 }
             }

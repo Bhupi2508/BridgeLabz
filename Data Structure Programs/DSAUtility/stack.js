@@ -141,7 +141,7 @@ class Stacks {
             if (this.top) {
                 let itemToPop = this.top;
                 this.top = this.top.next;
-                return itemToPop.data;
+                return itemToPop.element;
             } else {
                 console.log("Stack is empty!");
                 return false;
@@ -183,10 +183,11 @@ class Stacks {
     //Display method
     print() {
         try {
+            
             var string = "";
             var temp = this.top;
             while (temp != null) {
-                string = string + " " + temp.data;
+                string = string + " " + temp.element;
                 temp = temp.next;
             }
             return string;

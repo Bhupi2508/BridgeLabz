@@ -704,21 +704,26 @@ module.exports = {
 
             //Loop from 0 to 10 and stores the prime numbers and stores the values in each index.
             for (var i = 0; i < 10; i++) {
+                //call the Prime number range method 
                 primeArr[i] = utilNum.primeNumberRange(firstNum, lastNum);
+
+                //increase the value +100 for next node
                 firstNum = firstNum + 100;
                 lastNum = lastNum + 100;
 
             }
 
+            //These are used for count the numbers
             var start = 0;
             var end = 100;
-            /*
-             * To print the prime numbers in the range 0-­100,100­-200, and so on.
-             */
+
+            //To print the prime numbers in the range 0-­100,100­-200, and so on.
             for (var j = 0; j < 10; j++) {
                 take.print(
                     "[" + "[" + start + "-" + end + "]" + "," + " " + "[" + primeArr[j] + "]" + "]"
                 );
+
+                //increase the value
                 start = start + 100;
                 end = end + 100;
                 console.log();
@@ -749,7 +754,147 @@ module.exports = {
         */
 
     primeAnagram() {
+        try {
 
+            //create a 2-D array
+            var array = [
+                ["0 - 100 "],
+                ["100-200 "],
+                ["200-300 "],
+                ["300-400 "],
+                ["400-500 "],
+                ["500-600 "],
+                ["600-700 "],
+                ["700-800 "],
+                ["800-900 "],
+                ["900-1000"]
+            ];
+
+            var arr = []
+            var arr1 = []
+
+            //considered range = 100 for every row
+            range = 100;
+            var row = 0;
+            var col = 1;
+
+            for (var num = 2; num <= 1000; num++) {
+
+                //call the prime number function
+                if (utilNum.primeNum(num)) {
+
+                    if (num <= range) {
+                        var a = "" + num;
+
+                        //split and sortthe number
+                        var b = a.split("")
+                        b.sort();
+                        var temp = "";
+
+                        for (var i = 0; i < b.length; i++) {
+                            temp = temp + b[i]
+                        }
+
+                        //if num is not available in array 
+                        if (!arr.includes(temp)) {
+                            arr.push(temp);
+                            array[row][col] = num;
+                            col++;
+                        }
+                    } else {
+                        var a1 = "" + num;
+
+                        //split and sort the num
+                        var b1 = a1.split("")
+                        b1.sort();
+                        var temp1 = "";
+
+                        for (var i = 0; i < b1.length; i++) {
+                            temp1 = temp1 + b1[i]
+                        }
+
+                        //if num is not available in array 
+                        if (!arr.includes(temp1)) {
+                            arr1.push(temp1);
+                            col = 1;
+
+                            //increase the row
+                            range = range + 100;
+                            row++;
+                            array[row][col] = num;
+                        }
+                    }
+                }
+            }
+
+            //print the all numbers
+            for (var i = 0; i < array.length; i++) {
+                for (var j = 0; j < array[i].length; j++) {
+                    take.print(array[i][j] + " ");
+                    if (j == 0)
+                        take.print("  : ");
+                }
+                console.log();
+            }
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    },
+
+
+
+
+    //===================================================================================================
+    //Thirteen Program = Prime Number using LinkedList 
+
+    /*  
+        Desc :-
+        @author   - Bhupendra Singh
+        @Program  - Store the prime numbers in a 2D Array
+        @version  - 1.0
+        @Date     - 06/03/2019
+
+        Prime Numbers that are Anagram in the Range of 0 - 1000 in a Stack using
+        the Linked List and Print the Anagrams in the Reverse Order. Note no Collection
+        Library can be used.
+    */
+
+    linkedlistPrime() {
+        try {
+
+            var arr = []
+            var stack = new stackutil.Stacks()
+            
+            //check prime number or not
+            for (var i = 2; i <= 1000; i++) {
+               if(utilNum.primeNum(i))
+                arr.push(i)
+            }
+
+            console.log("Anagrams are in reverse order :");
+
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+
+                    //check anagram or not
+                    if (util1.anagram1(arr[i], arr[j])) {
+
+                        //store all the value in stack
+                        stack.push(Number(arr[i]));
+                        stack.push(Number(arr[j]));
+                    }
+                }
+            }
+            
+            //call the stack linkedlist method
+            var result = stack.print();
+            take.print(result + "\n")
+        
+
+        } catch (error) {
+            console.log(error.message);
+        }
     },
 }
 
