@@ -7,4 +7,9 @@ var read = require('readline-sync');
 
 var firstString = read.question("Enter first string : ")
 var secondString = read.question("Enter Second string : ")
-utility.anagram(firstString, secondString)
+var check = utility.anagram(firstString, secondString)
+if(check == true){
+    console.log("Yes String are Anagram");
+}else{
+    console.log("Yes String are not Anagram");
+}

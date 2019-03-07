@@ -551,27 +551,27 @@ module.exports = {
         var val2 = secondString;
         // First Convert in lowercase
         val1 = val1.toLowerCase()
-        console.log("after lowercase :" + val1);
+        //console.log("after lowercase :" + val1);
         // Split the string
         val1 = val1.split('')
-        console.log("after lowercase :" + val1);
+        //console.log("after lowercase :" + val1);
         // String sorted
         val1 = val1.sort()
-        console.log("after sort :" + val1);
+        //console.log("after sort :" + val1);
         // Join all the values
         val1 = val1.join('')
-        console.log("after join :" + val1);
+        //console.log("after join :" + val1);
         // Trim spaces
         val1 = val1.trim();
-        console.log("after trim :" + val1);
+        //console.log("after trim :" + val1);
 
         val2 = val2.toLowerCase().split('').sort().join('').trim();
 
         if (val1 === val2) {
-            console.log("Yes Strings are Anagram");
+            return true;
 
         } else {
-            console.log("Yes Strings are not Anagram");
+            return false;
         }
     },
 
@@ -585,10 +585,9 @@ module.exports = {
         val2 = val2.toLowerCase().split('').sort().join('').trim();
 
         if (val1 == val2) {
-
-
-            console.log("Anagram are : " + val1, val2);
-
+                return true;
+        }else{
+            return false;
         }
     },
 

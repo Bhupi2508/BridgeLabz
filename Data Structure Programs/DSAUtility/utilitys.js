@@ -2,13 +2,14 @@
  * To require the required files.
  */
 
-var read = require('readline-sync');
-var take = require('util');
-var util = require('../DSAUtility/linkedList1')
-var util1 = require('/home/admin1/bhupi/utility/utility')
-var stackutil = require('../DSAUtility/stack')
-var utilQueue = require('../DSAUtility/queue')
-var utilDeque = require('../DSAUtility/Deque')
+var read = require('readline-sync');                        //for user input
+var take = require('util');                                 //for print in one line
+var util = require('../DSAUtility/linkedList1')             //linkedList class
+var util1 = require('/home/admin1/bhupi/utility/utility')   //fun & algo utility
+var stackutil = require('../DSAUtility/stack')              //stack class
+var utilQueue = require('../DSAUtility/queue')              //queue class
+var utilDeque = require('../DSAUtility/Deque')              //deque class
+var utilNum = require('../DSAUtility/number')               //number class
 module.exports = {
 
     //===================================================================================================
@@ -32,25 +33,27 @@ module.exports = {
             for (var i = 0; i < data.length; i++) {
                 linkList.add(data[i])
             }
+
+            //display the data
             var display = linkList.display()
             console.log(display)
 
-
+            //search word from file
             var check = linkList.search(word)
-
             console.log(check);
 
+            //if word is in file then remove
             if (check == true) {
-
-
                 linkList.remove(word)
                 console.log("Removed Successfully");
 
+                //if word in not in file the add
             } else {
                 linkList.add(word)
                 console.log("Added Successfully");
             }
 
+            //after apply condition print the final file
             var display = linkList.display();
             linkList.writeFile('/home/admin1/bhupi/Data Structure Programs/file.txt', display)
         }
@@ -81,8 +84,10 @@ module.exports = {
             for (var i = 0; i < data1.length; i++) {
                 data[i] = parseInt(data1[i])
             }
+
             console.log(data)
 
+            //sort data by bubble sort
             var data = util1.bubble(data)
             console.log("After sorting");
 
@@ -92,15 +97,16 @@ module.exports = {
             var display = linkList.display()
             console.log(display)
 
-
+            //search number from file
             var check = linkList.search(number)
-
             console.log(check);
 
+            //if word is in file then remove
             if (check == true) {
                 linkList.remove(number)
                 console.log("Removed Successfully");
 
+                //if word in not in file the add
             } else {
                 linkList.add(number)
                 console.log("Added Successfully");
@@ -109,6 +115,7 @@ module.exports = {
             var display = linkList.display();
             console.log("After delete or added : " + display);
 
+            //after apply condition print the final file
             linkList.writeFile('/home/admin1/bhupi/Data Structure Programs/file1.txt', display)
         }
         catch (error) {
@@ -558,18 +565,23 @@ module.exports = {
     */
 
     stackCalendar(month, year) {
+
+        //create Queue and stack dir
         var dayQueue = new utilQueue.Queue();
         var dateQueue = new utilQueue.Queue();
         var stackutil1 = new stackutil.Stack();
         var stackutil2 = new stackutil.Stack();
 
+        //call dayOfWeek method for current day
         var dateValue = util1.dayOfWeek(Number(1), Number(month), Number(year));
         console.log(dateValue);
+
 
         var week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         var dates = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         var months = ["", "Jan", "Feb", "Mar", "April", "May", "Jun", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
 
+        //call leapYear method for check leapyear or not
         var leapY = util1.leapyear(year)
         if (leapY == true) {
             console.log("Leap year : " + year);
@@ -578,24 +590,28 @@ module.exports = {
             console.log("Not a leap year : " + year);
         }
 
+        //if year is leap year then Feb day = 29 
         if (month == 2) {
             dates[2] = 29
         }
 
         for (var i = 0; i < 7; i++) {
+            //first store week in enque
             dayQueue.enque(week[i])
-           var r = stackutil1.push(dayQueue.deque())
-           console.log(r);
-           
+
+            //first deque day from Queue, then push in stack
+            stackutil1.push(dayQueue.deque())
         }
 
         for (let i = 1; i <= dates[month]; i++) {
+            //first store date in enque
             dateQueue.enque(i)
-           var k = stackutil2.push(dateQueue.deque());
-           console.log(k);
-           
+
+            //first deque date from Queue, then push in stack
+            stackutil2.push(dateQueue.deque());
         }
 
+        //call the reverse method from the Stack
         var revstk1 = stackutil1.reverseStack();
         var revstk2 = stackutil2.reverseStack();
         console.log();
@@ -603,29 +619,92 @@ module.exports = {
         console.log("*************** CALENDAR *****************");
 
         for (var i = 0; i < 7; i++) {
-            take.print("  " + revstk1.pop());
+            //print day from reverse stack-1
+            take.print(revstk1.pop() + "   ");
         }
         console.log();
         console.log();
 
-        for (var i = 0; i < (dateValue * 4 + 2); i++) {
+        //create space for between the days
+        for (var i = 0; i < (dateValue * 6); i++) {
             take.print(" ")
         }
 
-        for (var i = 0; i < dates[months]; i++) {
+        //print date from reverse stack-2
+        for (var i = 0; i < dates[month]; i++) {
             var ch = revstk2.pop();
 
             if (i < 10) {
-                take.print(ch + "   ")
+                take.print("  " + ch + "   ")
             }
             if (i > 9) {
-                take.print("" + ch + "  ")
+                take.print(" " + ch + "   ")
             }
             if ((dateValue + ch) % 7 == 0) {
                 console.log();
-                take.print(" ")
+
             }
         }
+        console.log();
+        console.log();
+
+    },
+
+
+
+    //===================================================================================================
+    //Eleventh Program = Store the prime numbers in a 2D Array
+
+    /*
+        Desc :-
+        @author   - Bhupendra
+        @Program  - Store the prime numbers in a 2D Array
+        @version  - 1.0
+        @Date     - 05/03/2019
+
+        Take a range of 0 - 1000 Numbers and find the Prime numbers in that range. Store
+        the prime numbers in a 2D Array, the first dimension represents the range 0-100,
+        100-200, and so on. While the second dimension represents the prime numbers in
+        that range
+    */
+
+    primeNumber() {
+
+        try {
+            var primeArr = [[], [], [], [], [], [], [], [], [], []]
+            var firstNum = 2;
+            var lastNum = 100;
+
+            console.log();
+             console.log("Prime Numbers in the given range are :\n");
+
+            //Loop from 0 to 10 and stores the prime numbers and stores the values in each index.
+            for (var i = 0; i < 10; i++) {
+                primeArr[i] = utilNum.primeNumberRange(firstNum, lastNum);
+                firstNum = firstNum + 100;
+                lastNum = lastNum + 100;
+                
+            }
+
+            var start = 0;
+            var end = 100;
+            /*
+             * To print the prime numbers in the range 0-­100,100­-200, and so on.
+             */
+            for (var j = 0; j < 10; j++) {
+                take.print(
+                    "[" + "[" + start + "-" + end + "]" + "," + " " + "[" + primeArr[j] + "]" + "]"
+                );
+                start = start + 100;
+                end = end + 100;
+                console.log();
+            }
+            console.log("\n");
+        }
+        catch (error) {
+            console.log(error.message);
+        }
+
     }
 }
 
