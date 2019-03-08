@@ -1,6 +1,20 @@
-/*
-Stack Implementation
-*/
+
+/*****************************************************************************************
+ * 
+ * Execution    :   1. cmd> node stack.js
+ * 
+ * 
+ * Purpose      :   Stack implementation.
+ * 
+ * @description
+ * 
+ * @file        :   stack.js
+ * @overview    :   Stack implementation push pop peek and display function.
+ * @author      :   Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ * @version     :   1.0
+ * @since       :   02-03-2019
+ * 
+ * *************************************************************************************/
 
 class Stack {
     constructor() {

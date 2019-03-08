@@ -1,6 +1,17 @@
-/*
-Deque Implementation
-*/
+/*************************************************************************************
+* Execution    :   1. cmd> node Deque.js
+* Purpose      :   To have all the functionalities of DataStructure Programs.
+* 
+* @description
+* 
+* @file        :   Deque.js
+* @overview    :   Export the functionalities to developers for reuseability,
+*                  simplification of coding.
+* @author      :   Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+* @version     :   1.0
+* @since       :   05-03-2019
+* 
+* *************************************************************************************/
 
 class Deque {
     constructor() {

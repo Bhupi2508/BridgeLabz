@@ -1,4 +1,19 @@
-//monthly Payment
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node monthlypayment.js
+ *                      
+ * 
+ *  Purpose         : To calculate monthly payment.
+ * 
+ *  @description    
+ * 
+ *  @file           : monthlypayment.js
+ *  @overview       : Displays calculation results.
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 26/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

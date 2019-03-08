@@ -1,10 +1,18 @@
-//binarySearch method for integer
-//binarySearch method for String
-//insertionSort method for integer
-//insertionSort method for String
-//bubbleSort method for integer
-//bubbleSort method for String
-
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node sortSearch.js
+ *                      
+ * 
+ *  Purpose         : The program evaluate the time from start to end with the help of sorting and                            searching (Bubble, Insertion, Binary)
+ * 
+ *  @description    
+ * 
+ *  @file           : sortSearch.js
+ *  @overview       : Print the time between start to end.
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 25/02/2019
+ *
+ ******************************************************************************/
 /*
  * To require the required files.
  */

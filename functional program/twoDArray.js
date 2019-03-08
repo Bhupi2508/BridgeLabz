@@ -1,4 +1,22 @@
-// 2-D array 
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd>node twoDArray.js 
+ *                      
+ * 
+ *  Purpose         : A library for reading in 2D arrays of integers from 
+ *                    standard input and printing them out to standard output.
+ * 
+ *  @description    
+ * 
+ *  @file           : twoDArray.js 
+ *  @overview       : Print function to print 2 Dimensional Array. In Java use 
+ *                    PrintWriter with OutputStreamWriter to print the output to 
+ *                    the screen.
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 22/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

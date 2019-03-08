@@ -1,4 +1,19 @@
-// PrimeNumber
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node primeNumber.js
+ *                      
+ * 
+ *  Purpose         : Prints N th numbers of prime numbers
+ * 
+ *  @description    
+ * 
+ *  @file           : primeNumber.js
+ *  @overview       : Prints prime numbers.
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 24/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

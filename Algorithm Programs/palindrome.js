@@ -1,4 +1,19 @@
-// Newton's Program
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node palindrome.js
+ *                      
+ * 
+ *  Purpose         :  check the num or string is palindrome or not
+ * 
+ *  @description    
+ * 
+ *  @file           : palindrome.js
+ *  @overview       : check palindrome then return true or false
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 26/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

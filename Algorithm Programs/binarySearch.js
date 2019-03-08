@@ -1,4 +1,19 @@
-//Binary Search
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node binarySearch.js
+ *                      
+ * 
+ *  Purpose         : The program find the word from the file.
+ * 
+ *  @description    
+ * 
+ *  @file           : binarySearch.js
+ *  @overview       : search word from the file and print it.
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 25/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

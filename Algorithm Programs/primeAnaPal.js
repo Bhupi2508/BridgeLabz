@@ -1,4 +1,19 @@
-// Newton's Program
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node primeAnaPal.js
+ *                      
+ * 
+ *  Purpose         : Print palindrome numbers and two numbers compare anagram or not
+ * 
+ *  @description    
+ * 
+ *  @file           : primeAnaPal.js
+ *  @overview       : prints palindrome and anagram numbers
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 27/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

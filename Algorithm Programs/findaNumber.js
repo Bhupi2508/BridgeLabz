@@ -1,4 +1,19 @@
-// // Find a Number
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node findaNumber.js
+ *                      
+ * 
+ *  Purpose         : Find the number between start and end(mid)
+ * 
+ *  @description    
+ * 
+ *  @file           : findaNumber.js
+ *  @overview       : Print the intermediary number and the final answer
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 25/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */

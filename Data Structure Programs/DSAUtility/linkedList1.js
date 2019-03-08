@@ -1,11 +1,18 @@
-/*
- * To require the required files.
- */
-var read = require('readline-sync');
+/*************************************************************************************
+* Execution    :   1. cmd> node linkedList1.js
 
-/*
-LinkedList Implementation
-*/
+* Purpose      :   To have all the functionalities of DataStructure Programs.
+* 
+* @description
+* 
+* @file        :   linkedList1.js
+* @overview    :   Export the functionalities to developers for reuseability,
+*                  simplification of coding.
+* @author      :   Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+* @version     :   1.0
+* @since       :   01-03-2019
+* 
+* *************************************************************************************/
 
 //Create a node class
 class Node {

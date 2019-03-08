@@ -1,6 +1,18 @@
-/*
-Queue Implementation
-*/
+/*****************************************************************************************
+ * Execution    :   1. cmd> node queue.js
+ *                   
+ * 
+ * Purpose      :   Queue implementation.
+ * 
+ * @description
+ * 
+ * @file        :   queue.js
+ * @overview    :   Queue implementation enqueue dequeue and display function.
+ * @author      :   Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ * @version     :   1.0
+ * @since       :   03-03-2019
+ * 
+ * *************************************************************************************/
 
 class Queue {
     constructor() {
@@ -21,7 +33,7 @@ class Queue {
     //enque function
     //enque, insert the element
     enque(data) {
-        //console.log(data);
+        //console.log(data);/
         if (this.top == this.capacity - 1) {
             console.log("Queue Overflow");
             return;

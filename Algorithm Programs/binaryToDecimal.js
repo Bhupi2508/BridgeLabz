@@ -1,4 +1,18 @@
-//Binary to Decimal
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd> node binaryToDecimal.js
+ *                      
+ * 
+ *  Purpose         : Convert decimal to binary numbers to decimal
+ * 
+ *  @description    
+ * 
+ *  @file           : binaryToDecimal.js
+ *  @overview       : prints binary numbers with 8-chars and then convert again in decimal
+ *  @author         : Bhupendra Singh<bhupendrsingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 27/02/2019
+ *
+ ******************************************************************************/
 /*
  * To require the required files.
  */

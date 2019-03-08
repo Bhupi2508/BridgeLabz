@@ -1,4 +1,19 @@
-// Coupen number
+/******************************************************************************
+ *  Execution       :   1. default node          : cmd>node coupons.js 
+ *                      
+ * 
+ *  Purpose         : Generate random coupon number 
+ * 
+ *  @description       
+ * 
+ *  @file           : coupons.js
+ *  @overview       : Total random number needed to have all distinct numbers
+ *  @author         : Bhupendra Singh<bhupendrasingh.ec18@gmail.com>
+ *  @version        : 1.0
+ *  @since          : 22/02/2019
+ *
+ ******************************************************************************/
+
 /*
  * To require the required files.
  */
