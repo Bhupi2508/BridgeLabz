@@ -26,6 +26,11 @@ module.exports = {
      First Program = Replace String 
     */
 
+    /*
+      Desc -> Replace the string from user string
+
+    */
+
 
     replaceString(username) {
         try {
@@ -1311,7 +1316,7 @@ module.exports = {
     /*==================================================================================================
     Sixteenth Program = Decimal-Binary & Binary-Decimal Convert
     */
-   
+
     /* Convert to Binary
 *
 *   Purpose      :  It is used to generate the random numbers that should converted into 
