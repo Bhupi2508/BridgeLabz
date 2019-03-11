@@ -13,6 +13,9 @@ class Stocks {
     }
 
     totalStocks() {
+        /*
+        Calculate the value of stocks
+        */
         return (this.stockShare * this.stockPrice)
     }
 

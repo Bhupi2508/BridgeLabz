@@ -22,10 +22,14 @@ var utility = require('../Oops Programs/utility/utility2')
 var file = require('fs');
 var readFile = file.readFileSync('/home/admin1/bhupi/Oops Programs/Json files/Inventory.json','utf8')
 
+
 var data = JSON.parse(readFile);
+
 var check = utility.jsonInventry(data);
-var json = JSON.stringify(check)
-console.log("In JSON form : " + json);
+var res = JSON.stringify(check)
+console.log("Total sum of rice + pulses + wheat : " + res);
+
+
 
 
 

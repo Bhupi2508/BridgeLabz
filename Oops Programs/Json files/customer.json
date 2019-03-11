@@ -1,0 +1,19 @@
+{
+	"customer" : [ { "name" : "rahul",
+			 "Id" 	: "1",
+			 "amount" : 250000,
+		       },
+		       { "name" : "pankaj",
+			 "Id" 	: "2",
+			 "amount" : 150000,
+		       },
+ 	 	       { "name" : "ram",
+			 "Id" 	: "3",
+			 "amount" : 350000,
+		       },
+	 	       { "name" : "sandeep",
+			 "Id" 	: "4",
+			 "amount" : 250000,
+		       }
+		   ]
+}
