@@ -4,6 +4,7 @@ To require the required files.
 var read = require('readline-sync');
 var inventoryutil = require('../classes/inventoryClass')
 var stockUtil = require('../classes/stockClass')
+var commDataStock = require('../classes/stockCommercialData')
 
 module.exports = {
 
@@ -37,7 +38,7 @@ module.exports = {
             var pulsessum = 0;
             var wheatsum = 0;
 
-            var sum =0;
+            var sum = 0;
 
             console.log("These all are in JS Obj form \n");
 
@@ -50,7 +51,7 @@ module.exports = {
             }
 
             console.log();
-            console.log("Totalvalue of rice : " + ricesum +" Rs\n");         
+            console.log("Totalvalue of rice : " + ricesum + " Rs\n");
 
             for (var key in pulses) {
                 var num = pulses[key].weight * pulses[key].price;
@@ -61,18 +62,18 @@ module.exports = {
             }
 
             console.log();
-            console.log("Totalvalue of pulses: "+pulsessum +" Rs\n");
+            console.log("Totalvalue of pulses: " + pulsessum + " Rs\n");
 
             for (var key in wheat) {
                 var num = wheat[key].weight * wheat[key].price;
                 console.log("cost of " + wheat[wheatName].wname + " is : " + num + " Rs");
                 wheatName++;
-                wheatsum += num; 
+                wheatsum += num;
 
             }
 
             console.log();
-            console.log("Totalvalue of wheat : "+wheatsum +" Rs\n");
+            console.log("Totalvalue of wheat : " + wheatsum + " Rs\n");
 
             sum += ricesum + pulsessum + wheatsum;
             return sum;
@@ -103,20 +104,20 @@ module.exports = {
         try {
 
             var file = require('fs')
-            
-            var temp = file.readFileSync('/home/admin1/bhupi/Oops Programs/regex.txt', 'utf8');
 
-            var a = /[a - z]/;
-            var b = /[A - Z]/;
-            var c = /[0 - 9]/;
+            var temp = file.readFileSync('../Oops Programs/regex.txt', 'utf8');
+
+            var a = /[a-z]/;
+            var b = /[A-Z]/;
+            var c = /[0-9]/;
             var date = new Date();
 
             /*
             check whether name is string or not
             */
-            var name = read.question("Enter your name : ")
-            if (a.test(name) || b.test(name)) {
-                temp = temp.replace(/<<name>>/, name)
+            var Name = read.question("Enter your name : ")
+            if (a.test(Name) || b.test(Name)) {
+                temp = temp.replace(/<<name>>/i, Name)
             } else {
                 console.log("Invalid value, use only alphabets for name");
             }
@@ -127,7 +128,7 @@ module.exports = {
             */
             var fullName = read.question("Enter your full name : ")
             if (a.test(fullName) || b.test(fullName)) {
-                temp = temp.replace(/<<full name>>/, fullName)
+                temp = temp.replace(/<<full name>>/i, fullName)
             } else {
                 console.log("Invalid value, use only alphabets for fullname ");
             }
@@ -139,11 +140,11 @@ module.exports = {
             if (c.test(phone) && phone.length == 10) {
                 temp = temp.replace(/xxxxxxxxxx/, phone)
             } else {
-                console.log("Invalid value, use only num between 0 - 9 ");
+                console.log("Invalid value, use only num between (0 - 9) or 10 digit number ");
 
             }
 
-            
+
 
             /*
              replace all the select strings
@@ -175,9 +176,9 @@ module.exports = {
     stockReport(stocks) {
 
         try {
-           var stockValue = 0;
-           var sum = 0;
-           console.log();
+            var stockValue = 0;
+            var sum = 0;
+            console.log();
 
             /*
             * Loop to ask user the details of the stock upto number of stocks.
@@ -230,15 +231,15 @@ module.exports = {
 
     */
 
-    InventoryManagement(fileRead){
+    InventoryManagement(fileRead) {
         try {
             /*
             convert json file into Javascript object and call the inventory class
             */
             var myObj = JSON.parse(fileRead)
             var object = new inventoryutil.invetoryClass()
-    
-            while (ch != 4) {
+
+            while (ch != 5) {
                 /*
                 choose the option for add, remove, display, print and calaulate
                 */
@@ -247,11 +248,11 @@ module.exports = {
                 console.log("Press 3 for Display :");
                 console.log("Press 4 for Calculation : ");
                 console.log("Press 5 to exit :\n");
-    
+
                 var ch = read.questionInt("Enter the number :\n");
-    
+
                 switch (ch) {
-    
+
                     case 1:
                         object.add(myObj);
                         break;
@@ -288,12 +289,48 @@ module.exports = {
 
     */
 
-    commercialData(){
+    commercialData(file1, file2) {
 
-        try{
+        try {
             
+            var customerData = JSON.parse(file1)
+            var companyData = JSON.parse(file2)
+            var object = new commDataStock.commercialData(customerData, companyData)
 
-        }catch (error) {
+            while (check != 5) {
+                /*
+               choose the option for create, buy, sell, print and Exit
+               */
+                console.log("\nPress 1 for Create ");
+                console.log("Press 2 for Buy ");
+                console.log("Press 3 for Sell ");
+                console.log("Press 4 for Print ");
+                console.log("Press 5 for Exit \n");
+                var check = read.questionInt("Enter your choice  :  ");
+
+                switch (check) {
+                    case 1:
+                        object.createData()
+                        break;
+                    case 2:
+                        object.buy()
+                        break;
+                    case 3:
+                        object.sell()
+                        break;
+                    case 4:
+                        object.print()
+                        break;
+                    case 5:
+                        break;
+                    default:
+                        console.log("\n!Please Enter correct key");
+
+                }
+            }
+
+
+        } catch (error) {
             console.log(error.message);
         }
     }

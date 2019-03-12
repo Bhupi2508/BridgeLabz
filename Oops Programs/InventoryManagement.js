@@ -19,5 +19,5 @@ To require the required files.
 var read = require('readline-sync')
 var utility = require('../Oops Programs/utility/utility2')
 var file = require('fs')
-var fileRead = file.readFileSync('/home/admin1/bhupi/Oops Programs/Json files/Inventory.json')
+var fileRead = file.readFileSync('../Oops Programs/Json files/Inventory.json')
 utility.InventoryManagement(fileRead)
