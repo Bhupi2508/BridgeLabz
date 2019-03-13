@@ -94,7 +94,7 @@ class LinkedList {
         var temp = this.first;
         var str = "";
         while (temp) {
-            str =  str + " " +temp.data;
+            str = str + " " + temp.data;
 
             temp = temp.next;
         }
@@ -151,9 +151,9 @@ class LinkedList {
         var file = require('fs')
         var arr = []
         var data = file.readFileSync(path, 'utf8')
-        
+
         var arr = data.trim().split(" ")
-        
+
         return arr;
     }
 
@@ -169,7 +169,171 @@ class LinkedList {
 
 }
 
+class LinkedList1 {
+    /**
+     * Linked List class has two properties, where head stores the first node of a List,
+     * and size indicates the number of nodes in a list.
+     */
+    constructor() {
+        this.head = null;
+        this.size = null;
+    }
+
+    //add function
+    add(data) {
+        try {
+            var node = new Node(data);
+            var current = this.head;
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                current = this.head;
+                while (current.next) {
+                    current = current.next;
+                }
+                current.next = node;
+            }
+            this.size++;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+//search function
+    search(data) {
+        try {
+            var temp = this.head;
+            while (temp) {
+                if (temp.data == data) {
+                    return true;
+                }
+                temp = temp.next;
+            }
+            return false;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    //remove function
+    removeItem(data) {
+        try {
+            var current = this.head;
+            var prev = null;
+
+            while (current != null) {
+                if (current.data == data) {
+                    if (prev == null) {
+                        this.head = current.next;
+                    } else {
+                        prev.next = current.next;
+                    }
+                    this.size--;
+                    return true;
+                }
+                prev = current;
+                current = current.next;
+            }
+            return false;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    //display function
+    display() {
+        try {
+            var curr = this.head;
+            var str = "";
+            while (curr) {
+                str += curr.data + " ";
+                curr = curr.next;
+            }
+            return str;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    insertAt(element, index) {
+        try {
+            if (index > 0 && index > this.size) return false;
+            else {
+                var node = new Node(element);
+                var curr, prev;
+                curr = this.head;
+                if (index == 0) {
+                    node.next = this.head;
+                    this.head = node;
+                } else {
+                    curr = this.head;
+                    var it = 0;
+                    while (it < index) {
+                        it++;
+                        prev = curr;
+                        curr = curr.next;
+                    }
+                    node.next = curr;
+                    prev.next = node;
+                }
+                this.size++;
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    addpos(arr, num) {
+        try {
+            for (let i = 0; i < arr.length - 1; i++) {
+                if (arr[0] >= num) return 0;
+                else if (arr[i] < num && arr[i + 1] > num) {
+                    return i + 1;
+                }
+            }
+            return arr.length;
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    //print function
+    print() {
+        var arr = [];
+        if (this.head == null) {
+            return null;
+        } else {
+            var temp = this.head;
+            while (temp) {
+                arr.push(temp.data);
+                temp = temp.next;
+            }
+            return arr;
+        }
+    }
+
+    removeStock(element) {
+        var temp = this.head;
+        var prev = null;
+        while (temp != null) {
+            var stock = temp.data;
+            if (stock.name == element || stock.symbol == element) {
+                if (prev == null) {
+                    this.head = temp.next;
+                } else {
+                    prev.next = temp.next;
+                }
+                this.size--;
+                return temp.data;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return -1;
+    }
+}
+
 
 module.exports = {
-    LinkedList
+    LinkedList,LinkedList1
 }   

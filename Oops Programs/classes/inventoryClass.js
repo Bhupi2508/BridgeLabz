@@ -1,3 +1,15 @@
+/***************************************************************************************
+ * Execution        : Default node             cmd> node inventoryClass.js 
+ *
+ * @file            : inventoryClass.js
+ * 
+ * @overview        : inventory class method is used for inventory stocks(rice, pulses, wheat)
+ *                     
+ * @author          : Bhupendra Singh <bhupendrasingh.ec18@gmail.com>
+ * @version         : 1.0.  
+ * @since           : 09/03/2019
+ * **************************************************************************************/
+
 /*
 To require the required files.
 */

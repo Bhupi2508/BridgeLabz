@@ -3,7 +3,7 @@
  *
  * @file            : commericalData.js
  * 
- * @overview        : The StockAccount class also maintains a list of CompanyShares object which has     *                    Stock Symbol and Number of Shares as well as DateTime of the transaction. When buy *                    or sell is initiated StockAccount checks if CompanyShares are available and        *                    accordingly update or create an Object.
+ * @overview        : The StockAccount class also maintains a list of CompanyShares object which has                 *                    Stock Symbol and Number of Shares as well as DateTime of the transaction. When buy             *                    or sell is initiated StockAccount checks if CompanyShares are available and                    *                    accordingly update or create an Object.
  *                     
  * @author          : Bhupendra Singh <bhupendrasingh.ec18@gmail.com>
  * @version         : 1.0.  

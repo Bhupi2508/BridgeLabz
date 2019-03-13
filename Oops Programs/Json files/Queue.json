@@ -1,0 +1,8 @@
+{"company":
+[{"name":"Google","share":3020,"price":1250,"time" : "2019-03-12T13:22:44.005Z"},
+{"name":"Amazon","share":3020,"price":1250, "time" : "2019-03-12T13:22:44.005Z"},
+{"name":"Oracle","share":3000,"price":1250, "time" : "2019-03-12T13:22:44.005Z"},
+{"name":"Nokia","share":3000,"price":1250, "time" : "2019-03-12T13:22:44.005Z"},
+{"name":"Paytm","share":3000,"price":1250, "time" : "2019-03-12T13:22:44.005Z"},
+{"name":"Dell","share":3000,"price":1250, "time" : "2019-03-12T13:22:44.005Z"}
+]}

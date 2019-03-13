@@ -2,14 +2,14 @@
  * To require the required files.
  */
 
-var read = require('readline-sync');                        /*for user input
-var take = require('util');                                 for print in one line
-var util = require('../DSAUtility/linkedList1')             linkedList class
-var util1 = require('/home/admin1/bhupi/utility/utility')   fun & algo utility
-var stackutil = require('../DSAUtility/stack')              stack class
-var utilQueue = require('../DSAUtility/queue')              queue class
-var utilDeque = require('../DSAUtility/Deque')              deque class
-var utilNum = require('../DSAUtility/number')               number class */
+var read = require('readline-sync');                        //for user input
+var take = require('util');                                 //for print in one line
+var util = require('../DSAUtility/linkedList1')            // linkedList class
+var util1 = require('/home/admin1/bhupi/utility/utility')  // fun & algo utility
+var stackutil = require('../DSAUtility/stack')             // stack class
+var utilQueue = require('../DSAUtility/queue')             // queue class
+var utilDeque = require('../DSAUtility/Deque')             // deque class
+var utilNum = require('../DSAUtility/number')              // number class 
 
 module.exports = {
 

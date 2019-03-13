@@ -54,7 +54,7 @@ class Queue {
             return null;
         }
         var ele = this.items[this.front++];
-       // console.log(this.front)
+        // console.log(this.front)
         this.size--;
         if (this.front > this.rear) {
             this.front = this.rear = -1;
@@ -193,6 +193,43 @@ class QueueLinkedList {
             current.element
         }
         return str;
+    }
+
+    //print function
+    printStock() {
+        var arr = [];
+        if (this.head == null) {
+            return null;
+        } else {
+            var temp = this.head;
+            while (temp) {
+                arr.push(temp.element);
+                temp = temp.next;
+                
+            }
+            return arr;
+        }
+    }
+
+    //remove function
+    removeStock(item) {
+        var temp = this.head;
+        var prev = null;
+        while (temp != null) {
+            var stock = temp.element;
+            if (stock.name == item) {
+                if (prev == null) {
+                    this.head = temp.next;
+                } else {
+                    prev.next = temp.next;
+                }
+                this.size--;
+                return temp.element;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return -1;
     }
 }
 

@@ -128,7 +128,7 @@ class SNode {
     }
 }
 
-//Create a class stack
+//Create a class stack for linkedlist
 class Stacks {
     constructor() {
         this.top = null;
@@ -144,6 +144,7 @@ class Stacks {
             } else {
                 this.top = node;
             }
+            
         } catch (error) {
             console.log(error.message);
         }
@@ -209,7 +210,44 @@ class Stacks {
             console.log(error.message);
         }
     }
+
+    //print function
+    printStock(){
+        var arr = [];
+        if (this.top == null) {
+          return null;
+        } else {
+          var temp = this.top;
+          while (temp) {
+            arr.push(temp.element);
+            temp = temp.next;
+          }
+          return arr;
+        }
+  }
+
+  //remove function
+  removeStock(item) {
+    var temp = this.top;
+    var prev = null;
+    while (temp != null) {
+     var stock = temp.element;
+      if (stock.name == item) {
+        if (prev == null) {
+          this.top = temp.next;
+        } else {
+          prev.next = temp.next;
+        }
+        this.size--;
+        return temp.element;
+      }
+      prev = temp;
+      temp = temp.next;
+    }
+    return -1;
+  }
 }
+
 
 module.exports = {
     Stack, Stacks

@@ -5,6 +5,9 @@ var read = require('readline-sync');
 var inventoryutil = require('../classes/inventoryClass')
 var stockUtil = require('../classes/stockClass')
 var commDataStock = require('../classes/stockCommercialData')
+var linkedStock = require('../classes/linkedList')
+var stackStock = require('../classes/stack')
+var queueStock = require('../classes/queue')
 
 module.exports = {
 
@@ -171,6 +174,8 @@ module.exports = {
         Input->  N number of Stocks, for Each Stock Read In the Share Name, Number of Share, and Share            Price
 
         Logic->  Calculate the value of each stock and the total value
+
+         Input -> stocks is input from main file for howmany stocks
     */
 
     stockReport(stocks) {
@@ -227,7 +232,9 @@ module.exports = {
     /*
         Desc -> Extend the above program to Create InventoryManager to manage the Inventory. The                 Inventory Manager will use InventoryFactory to create Inventory Object from JSON. The            InventoryManager will call each Inventory Object in its list to calculate the Inventory          Price and then call the Inventory Object to return the JSON String. The main program             will be with InventoryManager.
 
-    Logic ->   Get JSON Object in JavaScript. Create Inventory Object from JSON. Calculate the value for            every Inventory.
+    Logic ->   Get JSON Object in JavaScript. Create Inventory Object from JSON. Calculate the value for                        every Inventory.
+
+     Input -> fileRead is input from main file for file read
 
     */
 
@@ -287,12 +294,14 @@ module.exports = {
 
         logic -> By using create, buy, sell, print methods from the stock class
 
+         Input -> file1 and file2 are input from main file for file read(customer, company)
+
     */
 
     commercialData(file1, file2) {
 
         try {
-            
+
             var customerData = JSON.parse(file1)
             var companyData = JSON.parse(file2)
             var object = new commDataStock.commercialData(customerData, companyData)
@@ -333,5 +342,231 @@ module.exports = {
         } catch (error) {
             console.log(error.message);
         }
+    },
+
+
+
+    /*===================================================================================================
+    Sixth Program = Commercial data processing program by using Linkedist
+    */
+
+    /*
+        Desc -> Maintain the List of CompanyShares in a Linked List So new CompanyShares can be added or removed e           easily.
+
+        Logic -> By using linkedList methods for add, remove and print from the DataStructure concepts
+
+         Input -> listFile is input from main file for file read
+
+    */
+
+    stockLinkedList(listFile) {
+        try {
+
+            var Data = JSON.parse(listFile)
+            var object = new linkedStock.stockLinkedLIst(Data)
+            while (check != 4) {
+                /*
+               choose the option for create, buy, sell, print and Exit
+               */
+                console.log("\nPress 1 for Add ");
+                console.log("Press 2 for Remove ");
+                console.log("Press 3 for print ");
+                console.log("Press 4 for Exit \n");
+                var check = read.questionInt("Enter your choice  :  ");
+
+                switch (check) {
+                    case 1:
+                        object.addinList()
+                        break;
+                    case 2:
+                        object.removeFromList()
+                        break;
+                    case 3:
+                        object.print()
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        console.log("\n!Please Enter correct key");
+
+                }
+            }
+        } catch (error) {
+            console.log("error message");
+        }
+    },
+
+
+
+
+    /*===================================================================================================
+    Seventh Program = Commercial data processing program by using Stack
+    */
+
+    /*
+        Desc -> Further maintain the Stock Symbol Purchased or Sold in a Stack implemented using Linked List to              indicate transactions done.
+
+        Logic -> By using stack methods we modified add, remove, print
+
+        Input -> fileRead is input from main file for file read
+
+    */
+
+    stockStack(fileRead) {
+        try {
+
+
+            var Data = JSON.parse(fileRead);
+            var object = new stackStock.StackStock(Data)
+            while (check != 4) {
+                /*
+               choose the option for create, buy, sell, print and Exit
+               */
+                console.log("\nPress 1 for Add ");
+                console.log("Press 2 for Remove ");
+                console.log("Press 3 for print ");
+                console.log("Press 4 for Exit \n");
+                var check = read.questionInt("Enter your choice  :  ");
+
+                switch (check) {
+                    case 1:
+                        object.addinList()
+                        break;
+                    case 2:
+                        object.removeFromList()
+                        break;
+                    case 3:
+                        object.print()
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        console.log("\n!Please Enter correct key");
+
+                }
+            }
+        } catch (error) {
+            console.log("!error, please check it once")
+        }
+    },
+
+
+
+
+    /*===================================================================================================
+    Eight Program = Commercial data processing program by using Queue
+    */
+
+    /*
+        Desc -> Further maintain DateTime of the transaction in a Queue implemented using Linked List to indicate            when the transactions were done.
+
+        Logic -> By using queue methods we modified add, remove, print
+
+        Input -> fileRead is input from main file for file read
+
+    */
+
+    stockQueue(fileRead) {
+        try {
+
+
+            var Data = JSON.parse(fileRead);
+            var object = new queueStock.stockQueue(Data)
+            while (check != 4) {
+                /*
+               choose the option for create, buy, sell, print and Exit
+               */
+                console.log("\nPress 1 for Add ");
+                console.log("Press 2 for Remove ");
+                console.log("Press 3 for print ");
+                console.log("Press 4 for Exit \n");
+                var check = read.questionInt("Enter your choice  :  ");
+
+                switch (check) {
+                    case 1:
+                        object.addinList()
+                        break;
+                    case 2:
+                        object.removeFromList()
+                        break;
+                    case 3:
+                        object.print()
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        console.log("\n!Please Enter correct key");
+
+                }
+            }
+        } catch (error) {
+            console.log("!error, please check it once")
+        }
+    },
+
+
+
+
+
+    /*===================================================================================================
+    Ninth Program = Desk of Cards
+    */
+
+    /*
+        Desk -> Program ​ DeckOfCards.java ​ , to initialize deck of cards having suit ("Clubs", "Diamonds",                 "Hearts", "Spades") & Rank ("2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King",           "Ace"). 
+
+        Logic -> Shuffle the cards using Random method and then distribute 9 Cards to 4 Players and Print the                 Cards the received by the 4 Players using 2D Array...
+
+    */
+
+    cards() {
+        try {
+
+            /*
+            create an array for suit and rank cards
+            */
+            var suit = ["clubs", "Spades", "Hearts", "Diamonds"];
+            var rank = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"];
+
+            var arr = [];
+            var totalCards = (suit.length) * (rank.length)
+            for (var i = 0; i < suit.length; i++) {
+                for (var j = 0; j < rank.length; j++) {
+                    var str = "";
+                    arr.push(str + rank[j] + "--" + suit[i])
+                }
+            }
+
+            /*
+            Now suffling cards
+            */
+            for (var i = 0; i < totalCards; i++) {
+                /*
+                Generate random value and take that position arr value
+                */
+                var value = Math.floor(Math.random() * totalCards)
+
+                /*
+                Take automatically value from arr[Position] range of between 1 - 52,
+                and print that position value from arr array.
+                */
+                var temp = arr[i];
+                arr[i] = arr[value];
+                arr[value] = temp;
+
+            }
+          return arr;
+        } catch (error) {
+            console.log("!error, Please try again")
+        }
+    },
+
+    deskOfCards(res){
+        
+        console.log(res);
+        
+
     }
+
+
 }
