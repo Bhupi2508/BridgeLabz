@@ -8,6 +8,9 @@ var commDataStock = require('../classes/stockCommercialData')
 var linkedStock = require('../classes/linkedList')
 var stackStock = require('../classes/stack')
 var queueStock = require('../classes/queue')
+var card = require('../classes/cardsPlayer')
+var cardQueue = require('/home/admin1/bhupi/Data Structure Programs/DSAUtility/queue')
+var addressBook = require('../classes/AddressBook')
 
 module.exports = {
 
@@ -535,6 +538,7 @@ module.exports = {
                     var str = "";
                     arr.push(str + rank[j] + "--" + suit[i])
                 }
+
             }
 
             /*
@@ -555,18 +559,195 @@ module.exports = {
                 arr[value] = temp;
 
             }
-          return arr;
+            return arr;
         } catch (error) {
             console.log("!error, Please try again")
         }
     },
 
-    deskOfCards(res){
-        
-        console.log(res);
-        
+    /*
+    Input (res) take from main function which is in array
+    */
+    deskOfCards(res) {
 
+        var temp = 0;
+        var array = res;
+        /*
+        Decalare 2-D array for four player
+        */
+        var arr = [[], [], [], []];
+        for (var i = 0; i < 4; i++) {
+            for (var card = 0; card < 9; card++) {
+                /*
+                first print 9 random cards then after 9 and so on...
+                */
+                arr[i][card] = array[card + temp]
+            }
+            temp += 9;
+        }
+        for (var k = 0; k < arr.length; k++) {
+            console.log("Player " + (k + 1) + " have 9 random cards [" + arr[k] + " ]");
+
+        }
+    },
+
+
+
+
+
+    /*===================================================================================================
+    Tenth Program = Desk of Cards
+    */
+
+    /*
+        Desc -> Extend the above program to create a Player Object having Deck of Cards, and having ability to Sort          by Rank and maintain the cards in a Queue implemented using Linked List.
+
+        Logic -> Shuffle the cards using Random method and then distribute 9 Cards to 4 Players and Print the Cards           the received by the 4 Players using 2D Array...
+
+    */
+
+    QueueCards(take) {
+        try {
+            /*
+            In array variable has all the 52 random cards
+            */
+            var array = take;
+
+
+            /*
+            create array for every player(four player)
+            */
+            var player1 = [];
+            var player2 = [];
+            var player3 = [];
+            var player4 = [];
+
+            for (var i = 0; i < array.length; i++) {
+
+                /*
+                Take cards 1 to 13 from totalCards
+                */
+                if (i >= 0 && i < 13) {
+                    player1[i] = array[i]
+                }
+                /*
+                Take cards 13 to 26 from totalCards
+                */
+                else if (i >= 13 && i < 26) {
+                    player2[i - 13] = array[i]
+                }
+                /*
+                Take cards 26 to 39 from totalCards
+                */
+                else if (i >= 26 && i < 39) {
+                    player3[i - 26] = array[i]
+                }
+                /*
+                Take cards 39 to 52 from totalCards
+                */
+                else {
+                    player4[i - 39] = array[i]
+                }
+            }
+
+            /*
+            create obj for every player from Player class
+            */
+            var p1 = new card.Player(player1);
+            var p2 = new card.Player(player2);
+            var p3 = new card.Player(player3);
+            var p4 = new card.Player(player4);
+
+            /*
+            sort  all the player cards by using Player class sorting method
+            */
+
+            var sortp1 = p1.sorting();
+            var sortp2 = p2.sorting();
+            var sortp3 = p3.sorting();
+            var sortp4 = p4.sorting();
+
+            /*
+            call queue linkedlist method for queue and deque cards
+            */
+            var Queue = new cardQueue.QueueLinkedList();
+
+            /*
+            Now push all the player cards in queueLinked List by enqueue
+            */
+            Queue.enqueue(sortp1)
+            Queue.enqueue(sortp2)
+            Queue.enqueue(sortp3);
+            Queue.enqueue(sortp4)
+
+            /*
+            Print all the player cards from queue Linkedlist by Deque
+            */
+            console.log("\nPlayer 1 cards : [" + Queue.deque() + "]");
+            console.log("\nPlayer 2 cards : [" + Queue.deque() + "]");
+            console.log("\nPlayer 3 cards : [" + Queue.deque() + "]");
+            console.log("\nPlayer 4 cards : [" + Queue.deque() + "]");
+
+        } catch (error) {
+            console.log("!error, Please try again");
+        }
+    },
+
+
+
+
+    /*===================================================================================================
+    Eleventh Program = Address Book Problem
+    */
+
+    /*
+        Desc -> The software to be designed is a program that can be used to maintain an address book. An address            book holds a collection of entries, each recording a person's first and last names, address, city,           state, zip, and phone number.
+
+    */
+
+    Address(fileRead) {
+        try {
+
+            var Data = JSON.parse(fileRead);
+            var object = new addressBook.Address(Data);
+            while (check != 6) {
+                /*
+               choose the option for create, buy, sell, print and Exit
+               */
+                console.log("\nPress 1 for AddPerson ");
+                console.log("Press 2 for RemovePerson ");
+                console.log("Press 3 for EditPerson ");
+                console.log("Press 4 for Sort ");
+                console.log("Press 5 for Print ");
+                console.log("Press 6 for Exit \n");
+                var check = read.questionInt("Enter your choice  : ");
+
+                switch (check) {
+                    case 1:
+                        object.addPerson()
+                        break;
+                    case 2:
+                        object.removePerson()
+                        break;
+                    case 3:
+                        object.EditPerson()
+                        break;
+                    case 4:
+                        object.sort();
+                        break;
+                    case 5:
+                        object.print();
+                        break
+                    case 6:
+                        break;
+                    default:
+                        console.log("\n!Please Enter correct key");
+
+                }
+            }
+
+        } catch (error) {
+            console.log("!error");
+        }
     }
-
-
 }
